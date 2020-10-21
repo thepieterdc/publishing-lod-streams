@@ -65,20 +65,20 @@ Research main contributors of Apache Kafka -> Research of the contributors is no
 
 ## List of articles of interest
 ### Will certainly appear in the survey paper
-[[1]](#1)
-[[3]](#3)
-[[1000]](#1000)
-[[10]](#10)
+- [[1]](#1) R&wbase proposes a git-based file structure and organisation to allow versioning linked data.
+- [[3]](#3)
+- [[1000]](#1000) This paper describes the application of MQTT as a communication protocol for IoT devices. We can use this to send updates to clients with very low latency and high performance.
+- [[10]](#10)
 
 ### Will most likely appear in the survey paper
-[[1001]](#1001)
-[[6]](#6)
-[[1003]](#1003)
-[[9]](#9)
-[[1004]](#1004)
-[[11]](#11)
-[[12]](#12)
-[[13]](#13)
+- [[1001]](#1001) Exploration of different MoM techniques. Instead of only using MQTT, this paper also presents AMQP which allows unlimited message lengths, as well as storing messages
+- [[6]](#6)
+- [[1003]](#1003) Instead of running DNS over UDP as is the case today, this paper proposes to use DNS over HTTPS. This could be beneficial, because we can make use of existing caching solutions provided by the HTTP standard. 
+- [[9]](#9)
+- [[1004]](#1004) A new way to use DNS imposes new privacy and security challenges to tackle. This paper gives an outline of the main concerns.
+- [[11]](#11)
+- [[12]](#12)
+- [[13]](#13)
 
 ### Will not likely appear in the survey paper
 [[2]](#2)
