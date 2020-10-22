@@ -76,7 +76,7 @@ Use Web of Science to research papers cited in [[22]](#22) -> resulted in [[23]]
 - [[3]](#3) The paper tries to address the problem of storing too large datasets for (in this case) public transit data. The proposed solution consists of fragmenting the data and making use of linked data, as to limit the amount of data needed to resolve a query.
 - [[1000]](#1000) This paper describes the application of MQTT as a communication protocol for IoT devices. We can use this to send updates to clients with very low latency and high performance.
 - [[10]](#10)
-- [[14]](#14) This paper is about C-SPARQL, an extension on top of SPARQL. C-SPARQL makes it possible to query over a stream of RDF triples. Since it is an extension on top of SPARQL, already existing functionalities of SPARQL can be used. The same goes for the SPARQL syntax. The RDF stream is defined as an ordered sequence of pairs, where each pair is made of an RDF triple and its timestamp. Especially the part about how the RDF stream is defined is usefull.
+- [[14]](#14) This paper is about C-SPARQL, an extension on top of SPARQL. C-SPARQL makes it possible to query over a stream of RDF triples. Since it is an extension on top of SPARQL, already existing functionalities of SPARQL can be used. The same goes for the SPARQL syntax. The RDF stream is defined as an ordered sequence of pairs, where each pair is made of an RDF triple and its timestamp. Especially the part about how the RDF stream is defined is usefull.\
 -[[24]](#24) This paper discribes an approach to updates caches of open data using an appplication-aware change prioritization aproach.
 
 ### Will most likely appear in the survey paper
