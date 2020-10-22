@@ -47,7 +47,8 @@ These terms will lead to the actual papers that are found in the following steps
 13. Search "linked data git" on Google Scholar -> resulted in [[17]](#17).
 14. Search "git versioning of datasets" on Google Scholar -> resulted in [[13]](#13).
 15. Search "linked data stream" on Google Scholar -> resulted in [[14]](#14).
-16.  Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).
+16. Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).
+17  Search "open data updates" on Web of Science -> resulted in [[24]](#24).
 
 
 ### Step 4
@@ -76,6 +77,7 @@ Use Web of Science to research papers cited in [[22]](#22) -> resulted in [[23]]
 - [[1000]](#1000) This paper describes the application of MQTT as a communication protocol for IoT devices. We can use this to send updates to clients with very low latency and high performance.
 - [[10]](#10)
 - [[14]](#14) This paper is about C-SPARQL, an extension on top of SPARQL. C-SPARQL makes it possible to query over a stream of RDF triples. Since it is an extension on top of SPARQL, already existing functionalities of SPARQL can be used. The same goes for the SPARQL syntax. The RDF stream is defined as an ordered sequence of pairs, where each pair is made of an RDF triple and its timestamp. Especially the part about how the RDF stream is defined is usefull.
+-[[24]](#24) This paper discribes an approach to updates caches of open data using an appplication-aware change prioritization aproach.
 
 ### Will most likely appear in the survey paper
 - [[1001]](#1001) Exploration of different MoM techniques. Instead of only using MQTT, this paper also presents AMQP which allows unlimited message lengths, as well as storing messages
@@ -362,4 +364,5 @@ Exploring antecedents using interpretive structural modelling
 <a id="23" href> [23]</a>
 Hossain, M., Dwivedi, Y., Rana, N. (2016, April). State-of-the-art in open data research: Insights from existing literature and a research agenda
 
-
+<a id="24" href>[24]</a>
+U. Akhtar et al., "Change-Aware Scheduling for Effectively Updating Linked Open Data Caches," in IEEE Access, vol. 6, pp. 65862-65873, 2018, doi: 10.1109/ACCESS.2018.2871511.
