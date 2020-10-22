@@ -24,6 +24,7 @@ After the first meeting, we started reading in into the subject by reading the p
 5. Decentralization
 6. Azure service bus
 7. Linked data streaming
+8. Government Open Data
 
 These terms will lead to the actual papers that are found in the following steps.
 
@@ -46,6 +47,7 @@ These terms will lead to the actual papers that are found in the following steps
 13. Search "linked data git" on Google Scholar -> resulted in [[17]](#17).
 14. Search "git versioning of datasets" on Google Scholar -> resulted in [[13]](#13).
 15. Search "linked data stream" on Google Scholar -> resulted in [[14]](#14).
+16  Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).
 
 
 ### Step 4
@@ -59,6 +61,10 @@ Use Google Scholar to research papers citing [[18]](#18) -> resulted in [[19]](#
 Use Google Scholar to research papers cited by found papers (backwards) -> No useful results
 
 Research main contributors of Apache Kafka -> Research of the contributors is not very useful, but found [[7]](#7).
+
+Backward tracking from [[20]](#20)
+
+Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]](#21)
 
 
 
@@ -338,3 +344,9 @@ Verborgh, R., Hartig, O., De Meester, B., Haesendonck, G., De Vocht, L., Vander 
 
 <a id="19" href>[19]</a> 
 Folz, P., Skaf-Molli, H., & Molli, P. (2016, May). CyCLaDEs: a decentralized cache for Linked Data Fragments. In ESWC: Extended Semantic Web Conference.
+
+<a id="20" href>[20]</a>
+Lnenicka, M.,Komarkova, J. (2019, June). Developing a government enterprise architecture framework to support the requirements of big and open linked data with the use of cloud computing
+
+<a id="21" href>[21]</a>
+van Schalkwyk, F.,Willmers, M., McNaughton M. (2015, October): Viscous Open Data: The Roles of Intermediaries in an Open Data Ecosystem
