@@ -62,9 +62,9 @@ Use Google Scholar to research papers cited by found papers (backwards) -> No us
 
 Research main contributors of Apache Kafka -> Research of the contributors is not very useful, but found [[7]](#7).
 
-Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]](#21)
-Use Web of Science to research papers cited in [[21]](#21) -> resulted in [[22]](#22)
-Use Web of Science to research papers cited in [[22]](#22) -> resulted in [[23]](#23)
+Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]](#21).
+Use Web of Science to research papers cited in [[21]](#21) -> resulted in [[22]](#22).
+Use Web of Science to research papers cited in [[22]](#22) -> resulted in [[23]](#23).
 
 
 
