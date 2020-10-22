@@ -69,6 +69,7 @@ Research main contributors of Apache Kafka -> Research of the contributors is no
 - [[3]](#3) The paper tries to address the problem of storing too large datasets for (in this case) public transit data. The proposed solution consists of fragmenting the data and making use of linked data, as to limit the amount of data needed to resolve a query.
 - [[1000]](#1000) This paper describes the application of MQTT as a communication protocol for IoT devices. We can use this to send updates to clients with very low latency and high performance.
 - [[10]](#10)
+- [[14]](#14) This paper is about C-SPARQL, an extension on top of SPARQL. C-SPARQL makes it possible to query over a stream of RDF triples. Since it is an extension on top of SPARQL, already existing functionalities of SPARQL can be used. The same goes for the SPARQL syntax. The RDF stream is defined as an ordered sequence of pairs, where each pair is made of an RDF triple and its timestamp. Especially the part about how the RDF stream is defined is usefull.
 
 ### Will most likely appear in the survey paper
 - [[1001]](#1001) Exploration of different MoM techniques. Instead of only using MQTT, this paper also presents AMQP which allows unlimited message lengths, as well as storing messages
@@ -76,16 +77,15 @@ Research main contributors of Apache Kafka -> Research of the contributors is no
 - [[1003]](#1003) Instead of running DNS over UDP as is the case today, this paper proposes to use DNS over HTTPS. This could be beneficial, because we can make use of existing caching solutions provided by the HTTP standard. 
 - [[9]](#9) Document proposes another way of publishing event streams as linked data, using their own defined entities for events and such. This corresponds to the TREE specification and it could be interesting to comapre.
 - [[1004]](#1004) A new way to use DNS imposes new privacy and security challenges to tackle. This paper gives an outline of the main concerns.
-- [[11]](#11)
-- [[12]](#12)
-- [[13]](#13)
+- [[11]](#11) The paper is about versioning linked data. this builds on top of the git stack.
+- [[12]](#12) The paper is doing versioning of RDF data using a combination of SPARQL 1.1 and Git.
+- [[13]](#13) The paper is about comparing versions of a git versioned quad store by using Quit diff.
 
 ### Will not likely appear in the survey paper
 [[2]](#2)
 [[1002]](#1002)
 [[7]](#7)
 [[8]](#8)
-[[14]](#14)
 [[15]](#15)
 [[16]](#16)
 [[17]](#17)
