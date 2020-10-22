@@ -88,7 +88,7 @@ Use Web of Science to research papers cited in [[22]](#22) -> resulted in [[23]]
 - [[13]](#13) The paper is about comparing versions of a git versioned quad store by using Quit diff.
 - [[20]](#20) This paper gives an overview of current data distribution and interpretation mechanisms used by Governments.
 - [[21]](#21) This paper is about the current need and use of intermediaries on government open data.
-- [[23]] (#23) Thiss paper gives an overview of the existing state of the art in open data.
+- [[23]](#23) Thiss paper gives an overview of the existing state of the art in open data.
 
 ### Will not likely appear in the survey paper
 [[2]](#2)
