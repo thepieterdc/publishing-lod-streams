@@ -47,7 +47,7 @@ These terms will lead to the actual papers that are found in the following steps
 13. Search "linked data git" on Google Scholar -> resulted in [[17]](#17).
 14. Search "git versioning of datasets" on Google Scholar -> resulted in [[13]](#13).
 15. Search "linked data stream" on Google Scholar -> resulted in [[14]](#14).
-16  Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).
+16.  Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).
 
 
 ### Step 4
@@ -61,8 +61,6 @@ Use Google Scholar to research papers citing [[18]](#18) -> resulted in [[19]](#
 Use Google Scholar to research papers cited by found papers (backwards) -> No useful results
 
 Research main contributors of Apache Kafka -> Research of the contributors is not very useful, but found [[7]](#7).
-
-Backward tracking from [[20]](#20)
 
 Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]](#21)
 
@@ -86,6 +84,8 @@ Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]]
 - [[11]](#11) The paper is about versioning linked data. this builds on top of the git stack.
 - [[12]](#12) The paper is doing versioning of RDF data using a combination of SPARQL 1.1 and Git.
 - [[13]](#13) The paper is about comparing versions of a git versioned quad store by using Quit diff.
+- [[20]](#20) This paper gives an overview of current data distribution and interpretation mechanisms used by Governments.
+- [[21]](#21) This paper is about the current need and use of intermediaries on government open data.
 
 ### Will not likely appear in the survey paper
 [[2]](#2)
