@@ -63,6 +63,8 @@ Use Google Scholar to research papers cited by found papers (backwards) -> No us
 Research main contributors of Apache Kafka -> Research of the contributors is not very useful, but found [[7]](#7).
 
 Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]](#21)
+Use Web of Science to research papers cited in [[21]](#21) -> resulted in [[22]](#22)
+Use Web of Science to research papers cited in [[22]](#22) -> resulted in [[23]](#23)
 
 
 
@@ -86,6 +88,7 @@ Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]]
 - [[13]](#13) The paper is about comparing versions of a git versioned quad store by using Quit diff.
 - [[20]](#20) This paper gives an overview of current data distribution and interpretation mechanisms used by Governments.
 - [[21]](#21) This paper is about the current need and use of intermediaries on government open data.
+- [[23]] (#23) Thiss paper gives an overview of the existing state of the art in open data.
 
 ### Will not likely appear in the survey paper
 [[2]](#2)
@@ -99,6 +102,7 @@ Use Web of Science to research papers cited in [[20]](#20) -> resulted in [[21]]
 [[1006]](#1006)
 [[18]](#18)
 [[19]](#19)
+[[22]](#22)
 
 ### Will not appear in the survey paper
 [[4]](#4)
@@ -349,4 +353,13 @@ Folz, P., Skaf-Molli, H., & Molli, P. (2016, May). CyCLaDEs: a decentralized cac
 Lnenicka, M.,Komarkova, J. (2019, June). Developing a government enterprise architecture framework to support the requirements of big and open linked data with the use of cloud computing
 
 <a id="21" href>[21]</a>
-van Schalkwyk, F.,Willmers, M., McNaughton M. (2015, October): Viscous Open Data: The Roles of Intermediaries in an Open Data Ecosystem
+van Schalkwyk, F.,Willmers, M., McNaughton M. (2015, October). Viscous Open Data: The Roles of Intermediaries in an Open Data Ecosystem
+
+<a id="22" href>[22]</a>
+Dwivedi, Y.,Janssen, M., Slade, E., Rana, N., Weerakkody, V., Millard, J., Hidders, J., Snijders, D., (2016, July). Driving innovation through big open linked data (BOLD):
+Exploring antecedents using interpretive structural modelling
+
+<a id="23" href> [23]</a>
+Hossain, M., Dwivedi, Y., Rana, N. (2016, April). State-of-the-art in open data research: Insights from existing literature and a research agenda
+
+
