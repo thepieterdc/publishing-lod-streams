@@ -1,0 +1,11 @@
+from: markdown
+to: pdf
+
+cite-method: citeproc
+metadata:
+  - author: De Clercq, Pieter - De Witte, Andreas - Devos, Robin - Veldeman, Sieben
+  - title: "Towards maintainable Web APIs with Linked Event Streams"
+output-file: search-strategy.pdf
+pdf-engine: xelatex
+standalone: true
+verbosity: WARNING
