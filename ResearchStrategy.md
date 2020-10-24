@@ -47,7 +47,7 @@ These terms will lead to the actual papers that are found in the following steps
 13. Search "linked data git" on Google Scholar -> resulted in [[17]](#17).
 14. Search "git versioning of datasets" on Google Scholar -> resulted in [[13]](#13).
 15. Search "linked data stream" on Google Scholar -> resulted in [[14]](#14).
-16. Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).\
+16. Search "Government Big Open Data" on Web of Science -> resulted in [[20]](#20).
 17. Search "open data updates" on Web of Science -> resulted in [[24]](#24).
 
 
