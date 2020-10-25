@@ -89,34 +89,34 @@ Forward and backward tracking of given and found papers resulted in the followin
 - [@delva2020geospatial] The paper tries to address the problem of storing too large datasets for (in this case) public transit data. The proposed solution consists of fragmenting the data and making use of linked data, as to limit the amount of data needed to resolve a query.
 - [@atmoko2017] This paper describes the application of MQTT as a communication protocol for IoT devices. We can use this to send updates to clients with very low latency and high performance.
 - [@Verborgh2014] One of the main problems of SPARQL endpoints is the limited scalability. This paper proposes Linked Data Fragments as a way to increase the scalability of SPARQL endpoints in turn for increased query times.
-- [@Barbieri2010] This paper is about C-SPARQL, an extension on top of SPARQL. C-SPARQL makes it possible to query over a stream of RDF triples. Since it is an extension on top of SPARQL, already existing functionalities of SPARQL can be used. The same goes for the SPARQL syntax. The RDF stream is defined as an ordered sequence of pairs, where each pair is made of an RDF triple and its timestamp. Especially the part about how the RDF stream is defined is usefull.\
+- [@Barbieri2010] This paper is about C-SPARQL, an extension on top of SPARQL. C-SPARQL makes it possible to query over a stream of RDF triples. Since it is an extension on top of SPARQL, already existing functionalities of SPARQL can be used. The same goes for the SPARQL syntax. The RDF stream is defined as an ordered sequence of pairs, where each pair is made of an RDF triple and its timestamp. Especially the part about how the RDF stream is defined is useful.
 - [@Akhtar2018] This paper discribes an approach to updates caches of open data using an appplication-aware change prioritization aproach.
 
 ## Will most likely appear in the survey paper
 - [@Luzuriaga2015] Exploration of different MoM techniques. Instead of only using MQTT, this paper also presents AMQP which allows unlimited message lengths, as well as storing messages
-- [@Graube2014] The paper presents a new version controlled way of storing and working with Linked Data. The paper also mentions related work such as R&Wbase: git for triples (by P. Colpaert e.a.) and claims this to be an improvement.
-- [@Hrushak2020] Instead of running DNS over UDP as is the case today, this paper proposes to use DNS over HTTPS. This could be beneficial, because we can make use of existing caching solutions provided by the HTTP standard. 
-- [@harth2011publishing] Document proposes another way of publishing event streams as linked data, using their own defined entities for events and such. This corresponds to the TREE specification and it could be interesting to comapre.
+- [@Hrushak2020] Instead of running DNS over UDP as is the case today, this paper proposes to use DNS over HTTPS. This could be beneficial, because we can make use of existing caching solutions provided by the HTTP standard.
 - [@Borgolte2019HowDO] A new way to use DNS imposes new privacy and security challenges to tackle. This paper gives an outline of the main concerns.
+- [@harth2011publishing] Document proposes another way of publishing event streams as linked data, using their own defined entities for events and such. This corresponds to the TREE specification and it could be interesting to compare.
 - [@Arndt2017ExploringTE] The paper is about versioning linked data. this builds on top of the git stack.
 - [@ArndtDist206] The paper is doing versioning of RDF data using a combination of SPARQL 1.1 and Git.
 - [@Arndt2016] The paper is about comparing versions of a git versioned quad store by using Quit diff.
 - [@Lnecicka2019] This paper gives an overview of current data distribution and interpretation mechanisms used by Governments.
+- [@Graube2014] The paper presents a new version controlled way of storing and working with Linked Data. The paper also mentions related work such as R&Wbase: git for triples (by P. Colpaert e.a.) and claims this to be an improvement.
 - [@Schalkwyk2016] This paper is about the current need and use of intermediaries on government open data.
 - [@Hossain2015] This paper gives an overview of the existing state of the art in open data.
 
 ## Will not likely appear in the survey paper
 - [@van2020comparing]
 - [@Parwez2010]
-- [@AwesomeStreaming]
 - [@Tommasini2019BootstrappingTP]
 - [@Sparql2Git]
 - [@Kubitza2019]
 - [@grlc2016]
-- [@Kuhn2015]
 - [@RFC8484]
+- [@Kuhn2015]
 - [@Verborgh2014QueryingHA]
 - [@Folz2015CyCLaDEsAD]
+- [@AwesomeStreaming]
 - [@Dwivedi2016]
 
 ## Will not appear in the survey paper
