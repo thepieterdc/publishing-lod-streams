@@ -7,4 +7,5 @@ COPY Gemfile /data/Gemfile
 COPY Gemfile.lock /data/Gemfile.lock
 RUN bundle install
 COPY . /data
-CMD bundle exec guard --no-interactions
+RUN chmod +x /data/docker-entrypoint.sh
+ENTRYPOINT /data/docker-entrypoint.sh
