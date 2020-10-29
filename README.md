@@ -5,3 +5,5 @@
 cd paper/
 ./start-server.sh
 ```
+## Read your written stuff
+Open browser and go to http://localhost:3000/
