@@ -1,17 +1,14 @@
 ## Data delivery = Sieben
-In this chapter we will discuss the transmission of our data to the users. As we have previously discussed the storage of data, the problem arises of how we will let the users access it. The current most commonly used protocol for web data exchange is HTTP, which uses a request - response communication pattern. However, this might not be the most optimal form of communication for our purpose. The MQTT protocol, which uses a publish - subcribe pattern or existing software such as Apache Kafka, which employs a similar strategy and uses a protocol an own protocol directly over TCP, might be more suitable. Alternatively, regular HTTP can still be viable, however a new kind of 'protocol' will have to be built on top of it, to better meet the needs of event-based processing.
+In this chapter, we will discuss the transmission of the data to the users. Since we have previously discussed how data can be stored, the next problem that arises is how to expose it for consumers to access. The current most commonly used protocol for web data exchange is HTTP, which uses a `request-response` communication pattern. However, this might not be the most optimal form of communication for our purpose. The MQTT protocol, which uses a `publish-subscribe` pattern or existing software such as Apache Kafka, which employs a similar strategy and uses a protocol an own protocol directly over TCP, might be more suitable. Alternatively, regular HTTP can still be viable, however, a new kind of 'protocol' will have to be built on top of it, to better meet the needs of event-based processing.
 
-Also impacting the transmission will be the partitioning of the data. Since we are working with eventstreams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
+Also impacting the transmission will be the partitioning of the data. Since we are working with event streams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
 
-- RSS/Atom
-- Linked Data Notifications
-    - Hiaat: Gaat update over volledige object of enkel over de updates
-- ActivityStreams 2
-
+---
 - Event streaming vs event sourcing
     - sourcing: event stream opslaan + archiveren -> data doen
     - streaming: iets doen met laatste waarden en zo snel mogelijk ergens anders krijgen
-   
+---   
+
 The form of the data also impacts the transmission. In the case of real-time sensor data, for example, [](cite:cites atmoko2017) shows an MQTT-based approach an indicates that this is more efficient than regular HTTP.
 
 Other options include the utilization of web feeds, such as (most commonly) RSS. RSS [](cite:cites rsspilgrim) publishes updates in a feed and allows users to access them in a standardized format.However, RSS is an umbrella term which spans different formats. Therefore, Atom [http://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared, https://tools.ietf.org/html/rfc5023] was created, with the goal of achieving more standardization and disambiguation. It uses a separate protocol on top of HTTP. These two approaches to data publishing (which are very similar) should both be considered, since the concept and use of web feeds is similar to what the event-based approach wants to achieve, however, it is is hard to determine a clear ``best option” without doing research (i.e. experimenting with these techniques).
