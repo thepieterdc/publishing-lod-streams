@@ -9,5 +9,5 @@ This chapter will discuss git/ostrich.
 - RSP-QL = time context
     - http://streamreasoning.github.io/RSP-QL/RSP_Requirements_Design_Document/
 
-# Activity Streams 2 seems more useful for either Data versioning or Data formatting
+#### Activity Streams 2 seems more useful for either Data versioning or Data formatting
 Activity Streams 2.0 [https://www.w3.org/TR/activitystreams-core/] are another specification by W3C. It specifies a model which represents activities using JSON.The most basic building block is an ‘Activity’ which describes an action. This specification seems to be lacking support for representing the history of updates, like there exist in specifications more focused towards events. The model does specify possibilities to make such a construction, for example using ‘Collection’ objects.
