@@ -19,6 +19,9 @@ An RDF triple represents a simple sentence. A commonly used example is the tripl
 ### Serialization format
 When thinking about RDF, it is important to note that RDF itself is not a data format, but a data model. It describes that the data should be represented with the (subject - predicate - object) triples form. Hence before an RDF graph can be published, it must be serialized using an RDF syntax. Many possible syntaxes exist, but the ones described in this paper are: 'RDF/XML', 'RDFa', 'Turtle', 'N-Triples' and 'JSON-LD'. All of those syntaxes are standardized [](cite:cites heath2011linked). 
 
+Maybe put below in a table.
+{:.todo}
+
 #### RDF/XML
 The RDF/XML syntax is one of the older RDF serialization syntaxes to publish Linked Data on the web. This syntax presents the RDF data model using XML. This syntax is recently being less used because of the difficulty of both reading and writing it for humans [](cite:cites manola2004rdf).
 
@@ -34,7 +37,24 @@ The N-Triple format is a subset of Turtle. The difference is that the N-Triples 
 #### JSON-LD
 JSON-LD is an abbreviation for JSON-LinkedData. JSON-LD is a lightweight Linked Data format, based on the widely used JSON format for passing on data. Because of this and because of both its readability and writability, JSON-LD is the ideal format to pass on Linked Data in a programming environment. Because JSON-LD uses the same syntax as JSON, it can easily be used to parse and manipulate RDF data [](cite:cites sporny2012json).
 
+#### TriG
+TriG is an extension of Turtle (see before). Just like Turtle, TriG defines a textual syntax for RDF that allows an RDF dataset to be written in a compact and natural text form. TriG extends the functionalities of Turtle by bringing the possibility to group triples into multiple graphs. Furthermore, these named graphs can be preceded by their names [](cite:cites trig). 
+
+#### CSV on the web
+CSV is a popular format for publishing data. It is understandable by both humans and michines and it usually presented in a table because of its structured format. One of the disadvantages of CSV is the absence of a mechanism to indicate the datatype of a specific column, which makes the validation of data hard. To solve this problem, CSV on the web introduces the use of metadata, which makes it possible to give additional information about the data. Another advantage is that this CSV data can be easily transformed to RDF data [](cite:cites tennison2016csv).
+
+#### Protocol Buffers
+Protocol Buffers is a method of serializin structured data. It is developed by Google and it involves an interface description language for the description of data. Google also provides a code generator for multiple programming laguages. The goal of Protocol Buffers is simplicity and performance. The data structures (so called messages) and services are described in a proto definition file. To achieve the high performance, those messages are serialized into a binary wire format. This makes it compact and both forward- and backward-compatible [](cite:cites protobuf).
+
+#### HDT
+HDT is a binary format to represent RDF data in a compact way. An HDT file is composed in three parts. The first part is the header, which provides metadata about the dataset in a plain RDF format. The second part is the dictionary, which brings a mapping between strings and unique identifiers. The last part are the triples, which encodes the RDF graph using unique identifiers [](cite:cites hdt).
+
 ### Decoupling data
 Since RDF is used to decouple data from its scheme, data should be possible to be received from a database and turned into an RDF format. As an example to show this is possible, SQL will be taken into account. 
 
 To make this more clear, the structure of SQL is briefly mentioned. SQL has a table. Every table has multiple rows and columns. A row presents an entity, while a column presents a value for a certain relation for an entity. When turning this into RDF, the SQL entity can be seen as the RDF subject. The relation (= column) would be the predicate and the value would be the object [](cite:cites sparql2013querylanguage). 
+
+However, a better approach for decoupling data would be using RML (see section below).
+
+#### RML
+RML is the RDF Mapping Language. This mapping language is defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model. Furthermore, RML is a superset of the W3C-standardized mapping language (= R2RML). RML provides a generic way of defining the mappings that is easily transferable to cover references to other data structures. Thus, RML is a very generic approach, but offers case-specific extensions. This makes it possible to transform any input (e.g., csv, json, relational databases, etc.) into RDF data [](cite:cites dimou2014rml).
