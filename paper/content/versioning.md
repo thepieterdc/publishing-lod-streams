@@ -1,5 +1,5 @@
 ## Data versioning
-After we have defined the structure of the data, we will investigate how we can implement versioning. This has two major advantages for data consumers. The first advantage is the ability to fetch only the data in the timeframe of their interest. Second, versioning allows us to define one or multiple snapshot versions, from which subsequent versions can be derived using deltas. As a result, data consumers only need to download the deltas between their latest local snapshot version, and their desired new version. In the context of real-time updates, this implies that only the changes since the last update need to be retrieved.
+After we have defined the structure of the data, we can investigate how we can implement versioning datasets. Data versioning has two main advantages for both the data consumers, as well as the providers. The first advantage for consumers is the ability to consider only data in a specified timeframe of interest. For example, a train schedule application does not require information about interruptions and delays from a month ago. Second, versioning allows the provider to define so-called ``snapshot'' versions, which correspond to checkpoints of the dataset. Consumers can reconstruct subsequent versions of the dataset by fetching only the deltas since a given snapshot. The benefit of these deltas is that the consumers do not need to download the entire dataset every time an update is published, they can download only the changes. For the providers, storing these deltas eliminates the need to store duplicate or redundant information.
 
 ### Git-based
 The first type of approach we will discuss is derived from the world of software engineering. Software developers use version control systems, such as Git or Mercurial, to work on the same source code files collaboratively. The same idea can be used to version data, as proposed by [Arndt et al](cite:cites arndt2018). This paper formalizes the requirements for a git-based data versioning infrastructure as follows:
@@ -10,13 +10,33 @@ The more users that contribute to the dataset, the higher the probability that s
 2. **Conflate diverged datasets:**
 Once the working groups have finished their subtasks, they should be able to integrate their changes back into the upstream dataset. This is achieved through a *merging* process, similar to Git. When merging two branches, however, conflicts may arise, in case other branches that touch the same data have already been integrated. The system must support both conflict detection and resolution, to prevent compromising data integrity.
 
-3. **Synchronisation of derivatives:**
-To enable distributing the dataset across multiple servers, a synchronization mechanism is required to ensure every device has a consistent version of the dataset. In Git, this corresponds to having both a local copy of the repository (on ), as well as a remote repository (via e.g. [GitHub](https://github.com/)). Subsequently, the local dataset can be updated via `pull` operations, whereas local changes can be `pushed` to the remote repository.
+3. **Synchronization of derivatives:**
+To enable distributing the dataset across multiple servers, a synchronization mechanism is required to ensure every device has a consistent version of the dataset. In Git, this corresponds to having both a local copy of the repository, as well as a remote repository (via e.g. [GitHub](https://github.com/)). Subsequently, the local dataset can be updated via *pull* operations, whereas local changes can be *pushed* to the remote repository.
+
+### RDF archives
+In addition to the Git-based approaches, techniques for archiving RDF data and executing queries on those archives are also gaining increased interest among researchers [](cite:cites rdfarchives,rdfquerytypes). The corresponding literature currently distinguishes six different types of queries, and will be explained by the example of a car park.
+
+1. **Version materialization:**
+The first type of query is the most basic form of retrieval. Version materialization allows the consumer to obtain the complete state of the dataset at a given timestamp or version, similar to the earlier discussed *snapshots*. Note that this technique is also being used by existing web archiving services, such as the [WayBack Machine of the Internet Archive](https://web.archive.org/). In the context of the car park example, this is equivalent to listing all cars that are in the car park at the given timestamp.
+
+2. **Delta materialization:**
+Subsequently, the consumer might be interested in obtaining the difference between two versions. This request is fulfilled using the second type of query. In order to enable this functionality, the system must support conflating several deltas into a new version to calculate the net differences. In the car park example, this would allow the consumer to retrieve a list of all cars that have entered the car park today.
+
+3. **Single-version structured queries:**
+Next, literature considers the evaluation of complex queries on one specific version of the dataset. This functionality is currently offered by SPARQL endpoints. An example query on the example situation could be: ``is there a blue car in the car park at January 1, 2020?''.
+
+4. **Single-delta structured queries:**
+The same analogy as with the first and second type of query can also be applied here. As an example, consider the following query: ``has a blue car entered the car park today?''.
+
+5. **Cross-version structured queries:**
+The fifth type is very similar to the third type, except that the goal is to query across multiple versions at once. The aforementioned example query can be slightly adapted as follows: ``has there ever been a blue car in the car park?''.
+
+6. **Cross-delta structured queries:**
+Finally, the former query type also has a delta counterpart. The above query can also be modified to serve as an example for this type: ``on average, how many cars enter the car park per day?''.
 
 
-- Doctoraat van Ruben Taelman
 - RSP-QL = time context
     - http://streamreasoning.github.io/RSP-QL/RSP_Requirements_Design_Document/
 
 #### Activity Streams 2 seems more useful for either Data versioning or Data formatting
-Activity Streams 2.0 [https://www.w3.org/TR/activitystreams-core/] are another specification by W3C. It specifies a model which represents activities using JSON.The most basic building block is an ‘Activity’ which describes an action. This specification seems to be lacking support for representing the history of updates, like there exist in specifications more focused towards events. The model does specify possibilities to make such a construction, for example using ‘Collection’ objects.
+Activity Streams 2.0 [https://www.w3.org/TR/activitystreams-core/] are another specification by W3C. It specifies a model which represents activities using JSON. The most basic building block is an ‘Activity’ which describes an action. This specification seems to be lacking support for representing the history of updates, like there exist in specifications more focused towards events. The model does specify possibilities to make such a construction, for example using ‘Collection’ objects.
