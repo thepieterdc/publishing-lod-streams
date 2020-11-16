@@ -52,6 +52,10 @@ The final strategy augments the stored triples with temporal validity informatio
 #### OSTRICH
 In addition to the above three storage techniques, [Taelman et al](cite:cites rdfostrich,rdfostrichfull) propose *OSTRICH* as a versioned ''hybrid IC-CB-TB'' storage mechanism. Because of this, OSTRICH is able to efficiently evaluate `VM`, `DM`, `SVQ` and `CVQ` queries and return the results as a stream of triples. Being a hybrid storage mechanism, the working of OSTRICH is inspired by combining the best properties and ideas of the other techniques. First, an immutable copy of the dataset is made, which serves as the initial version. This version is saved as an `HDT`-file. This format is a binary RDF representation which features both a high compression ratio, as well as indices to ''enable the efficient execution of triple pattern queries and count estimation''. All subsequent updates to the dataset are stored as deltas, which are also indexed and merged according to their timestamp to consume less disk space.
 
+### TODO
+- Live Open Data publishing in Flanders
+- hoe strikt zijn die requirements nodig bij git-based?
+- vergelijk "on a web of data streams" met git-based
 - RSP-QL = time context
     - http://streamreasoning.github.io/RSP-QL/RSP_Requirements_Design_Document/
 
