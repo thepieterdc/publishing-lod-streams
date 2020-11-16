@@ -50,6 +50,8 @@ Protocol Buffers is a method of serializing structured data. It is developed by 
 Explain what "forward- backward-compatible" means (https://www.beautifulcode.co/blog/88-backward-and-forward-compatibility-protobuf-versioning-serialization)
 
 #### HDT
+{:#formatting-hdt}
+
 HDT is a binary format to represent RDF data in a compact way. An HDT file is composed in three parts. The first part is the header, which provides metadata about the dataset in a plain RDF format. The second part is the dictionary, which brings a mapping between strings and unique identifiers. The last part are the triples, which encodes the RDF graph using unique identifiers [](cite:cites hdt).
 
 ### Decoupling data
