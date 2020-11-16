@@ -46,6 +46,9 @@ CSV stands for Comma-Seperated Values and is a popular format for publishing dat
 #### Protocol Buffers
 Protocol Buffers is a method of serializing structured data. It is developed by Google and it involves an interface description language for data. Google also provides a code generator for multiple programming languages. The goal of Protocol Buffers is simplicity and performance. The data structures (referred to as messages) and services are described in a proto definition file. To achieve the high performance, those messages are serialized into a binary wire format. This makes it compact and both forward- and backward-compatible [](cite:cites protobuf).
 
+##### TODO
+Explain what "forward- backward-compatible" means (https://www.beautifulcode.co/blog/88-backward-and-forward-compatibility-protobuf-versioning-serialization)
+
 #### HDT
 HDT is a binary format to represent RDF data in a compact way. An HDT file is composed in three parts. The first part is the header, which provides metadata about the dataset in a plain RDF format. The second part is the dictionary, which brings a mapping between strings and unique identifiers. The last part are the triples, which encodes the RDF graph using unique identifiers [](cite:cites hdt).
 
