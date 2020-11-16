@@ -4,9 +4,11 @@ In this chapter, we will discuss the transmission of the data to the users. Sinc
 Also impacting the transmission will be the partitioning of the data. Since we are working with event streams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
 
 ---
+
 - Event streaming vs event sourcing
-    - sourcing: event stream opslaan + archiveren -> data doen
-    - streaming: iets doen met laatste waarden en zo snel mogelijk ergens anders krijgen
+  - sourcing: event stream opslaan + archiveren -> data doen
+  - streaming: iets doen met laatste waarden en zo snel mogelijk ergens anders krijgen
+
 ---   
 
 The form of the data also impacts transmission. In the case of real-time sensor data, for example, [](cite:cites atmoko2017) shows an MQTT-based approach an indicates that this is more efficient than regular HTTP, however, since the goal is the achieve a generic approach for each form of data, elements of different technologies will need to be combined.
