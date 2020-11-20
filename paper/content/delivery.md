@@ -3,22 +3,23 @@
 
 In this chapter, we will discuss the transmission of the data to the users. Since we have previously discussed how data can be stored, the next problem that arises is how to expose it for consumers to access. The current most commonly used protocol for web data exchange is HTTP, which uses a `request-response` communication pattern. However, this might not be the most optimal form of communication for our purpose. The MQTT protocol, which uses a `publish-subscribe` pattern or existing software such as Apache Kafka, which employs a similar strategy and uses an own protocol directly over TCP, might be more suitable. Alternatively, regular HTTP can still be viable, however, a new kind of 'protocol' will have to be built on top of it, to better meet the needs of event-based processing.
 
-Also impacting the transmission will be the partitioning of the data. Since we are working with event streams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
+### Conditions
 
----
+#### Partitioning
+The partitioning of the data will impact the transmission of it. Since we are working with event streams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
 
-- Event streaming vs event sourcing
-  - sourcing: event stream opslaan + archiveren -> data doen
-  - streaming: iets doen met laatste waarden en zo snel mogelijk ergens anders krijgen
-
----   
-
+#### Format
 The form of the data also impacts transmission. In the case of real-time sensor data, for example, [](cite:cites atmoko2017) shows an MQTT-based approach an indicates that this is more efficient than regular HTTP, however, since the goal is the achieve a generic approach for each form of data, elements of different technologies will need to be combined.
 
+### Delivery Approaches
+
+#### Web feeds
 Other options include the utilization of web feeds, such as (most commonly) RSS. RSS [](cite:cites rsspilgrim) publishes updates in a feed and allows users to access them in a standardized format. However, RSS is an umbrella term that spans different formats. Therefore, Atom [http://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared, https://tools.ietf.org/html/rfc5023] was created, with the goal of achieving more standardization and disambiguation. It uses a separate protocol on top of HTTP. These two approaches to data publishing (which are very similar) should both be considered, since the concept and use of web feeds is similar to what the event-based approach wants to achieve, however, it is is hard to determine a clear ``best option” without doing research (i.e. experimenting with these techniques).
 
+#### Linked Data Notifications
 Linked Data Notifications [](cite:cites LDN) is another protocol developed by W3C. It shares similarities with earlier discussed technologies such as Kafka and MQTT. Instead of a Broker, it uses an Inbox. Senders make use of HTTP POST-requests which they send to the ‘Receiver’. The receiver is responsible for the Inbox, in which notifications will be stored. Consumers also consult the receiver, with GET-requests, on a GET-request to the Inbox URL, the receiver will return a listing of all notifications, each notification has a URI and must be an RDF source. The consumer can then request specific notifications from the Inbox. Each notification needs to have a JSON-LD content-type according to the specification, other serializations are optional. This clearly shows the similarities with a system that uses Brokers, however, LDN seems less focused on being lightweight and on continuous updating. Depending on the type of data, LDN might prove useful.
-   
+
+#### SSE and WebSockets
 [](cite:cites van2020comparing) compares an HTTP polling approach with a push-based approach (using SSE or Server-Sent Events) on live Open datasets. The datasets used are real-time in nature and most of them are updated almost continuously. The paper clearly shows that, in order to minimize latency on the client, a push-based approach is required, where the server keeps a connection open to the client, so it can send multiple updates of the dataset. In the paper, Server-sent-events are used as implementation of the push-based approach, also discussed are WebSockets, which uses an HTTP handshake but further transmission happens over a raw TCP connection and it supports bidirectional communication. SSE and WebSockets have similar performance and since SSE is unidirectional and only reliant on HTTP, the former was chosen in this article. Moreover, the CPU usage of SSE in comparison to polling was also shown to lower. For the purpose that we want to achieve [how to phrase this?] which is achieving a generic approach, for all kinds of Linked Open Datasets, it is clear that some sort of pushing from the server should be supported, since otherwise, the technology will not offer good support for fast-changing, continuously updating datasets. 
 [](cite:cites iotwang) shows a similar conclusion when comparing MQTT and HTTP on data from IoT devices, some datasets in [](cite:cites van2020comparing) will also certainly use IoT data. While the intention is not to use a lightweight, lower level protocol such as MQTT, it is valuable to at what makes the best option, i.e. the different communication model, and adapt the desired technology so it incorporates this.
 
