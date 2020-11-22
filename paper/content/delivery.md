@@ -25,6 +25,8 @@ Linked Data Notifications [](cite:cites LDN) is another protocol developed by W3
 
 Furthermore, low level protocols like MQTT suffer from security vulnerabilities [https://www.cvedetails.com/google-search-results.php?q=MQTT], which is problematic in the context of open data publishing. HTTP, on the other hand, is extremely established and mainstream and way less susceptible to the same type of problems, hence choosing HTTP is a necessity in terms of security.
 
-####WebSub
+#### WebSub
 
 WebSub [](cite:cites WebSub) is another protocol which provides publish-subscribe communication using HTTP. Previously known as PubSubHubbub, it was adopted by W3C in 2018. The protocol uses ‘Hubs’ as intermediary servers between the publishers, who own topics and update them and subscribers, who subscribe to topics. Subscribers need to be network-accessible at all times using their "Subscriber Callback URL''. Subscribers subscribe to a topic using HTTP POST to a hub and have to specify their callback URL. To publish a data update, publishers have to inform and update the hubs in some way, the protocol does not specify a mechanism, so it can be chosen by the users. Hubs will then update the subscribers in realtime by sending updates to the specified callback URL. The specification recommends using HTTPS for all performed requests, it also specifies an extra security header namely "X-Hub-Signature’’ which can be used for extra authentication. This protocol might be of interest, since it inherently supports decentralization, namely, hubs can be partitioned according to the needs of the user and so can the topic, i.e. topics could be duplicated across different hubs or could only be present on certain hubs. The downside to this protocol, is that it requires the "clients’’ (i.e. the users of the data) to always be available over HTTP, so they would have to run a server.
+
+https://www.w3.org/TR/push-api/
