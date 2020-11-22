@@ -19,9 +19,6 @@ An RDF triple represents a simple sentence. A commonly used example is the tripl
 ### Serialization format
 When thinking about RDF, it is important to note that RDF itself is not a data format, but a data model. It describes that the data should be represented with the (subject - predicate - object) triples form. Hence before an RDF graph can be published, it must be serialized using an RDF syntax. Many possible syntaxes exist, but the ones described in this paper are: 'RDF/XML', 'RDFa', 'Turtle', 'N-Triples' and 'JSON-LD'. All of those syntaxes are standardized [](cite:cites heath2011linked). 
 
-Maybe put below in a table.
-{:.todo}
-
 #### RDF/XML
 The RDF/XML syntax is one of the older RDF serialization syntaxes to publish Linked Data on the web. This syntax presents the RDF data model using XML. This syntax is recently being less used because of the difficulty of both reading and writing it for humans [](cite:cites manola2004rdf).
 
@@ -38,21 +35,23 @@ The N-Triple format is a subset of Turtle. The difference is that the N-Triples 
 JSON-LD is an abbreviation for JSON-LinkedData. JSON-LD is a lightweight Linked Data format, based on the widely used JSON format for passing on data. Because of this and because of both its readability and writability, JSON-LD is the ideal format to pass on Linked Data in a programming environment. Because JSON-LD uses the same syntax as JSON, it can easily be used to parse and manipulate RDF data [](cite:cites sporny2012json).
 
 #### TriG
-TriG is an extension of Turtle. Just like Turtle, TriG defines a textual syntax for RDF that allows an RDF dataset to be written in a compact and natural text form. TriG extends the functionalities of Turtle by bringing the possibility to group triples into multiple graphs. Furthermore, these named graphs can be preceded by their names [](cite:cites trig). 
+TriG is an extension of Turtle. Just like Turtle, TriG defines a textual syntax for RDF that allows an RDF dataset to be written in a compact and natural text form. TriG extends the functionalities of Turtle by bringing the possibility to group triples into multiple graphs. Furthermore, these named graphs can be preceded by their names. This is so important because named graphs are a key concept of the Semantic Web [](cite:cites trig). 
 
 #### CSV on the web
 CSV stands for Comma-Seperated Values and is a popular format for publishing data. It is understandable by both humans and machines and it is typically presented in a table because of its structured format. One of the disadvantages of CSV is the absence of a mechanism to indicate the datatype of a specific column, which makes the data hard to validate. To solve this problem, CSV on the web augments the dataset with metadata, which makes it possible to give additional information about the data. Another advantage is that this CSV data can be easily transformed to RDF data [](cite:cites tennison2016csv).
 
 #### Protocol Buffers
-Protocol Buffers is a method of serializing structured data. It is developed by Google and it involves an interface description language for data. Google also provides a code generator for multiple programming languages. The goal of Protocol Buffers is simplicity and performance. The data structures (referred to as messages) and services are described in a proto definition file. To achieve the high performance, those messages are serialized into a binary wire format. This makes it compact and both forward- and backward-compatible [](cite:cites protobuf).
+Protocol Buffers is a method of serializing structured data. It is developed by Google and it involves an interface description language for data. Google also provides a code generator for multiple programming languages. The goal of Protocol Buffers is simplicity and performance. The data structures (referred to as messages) and services are described in a proto definition file. To achieve the high performance, those messages are serialized into a binary wire format. This makes it compact and both forward- and backward-compatible. This backward compatibility means that a change in the technology will not break older versions. The forward compatibility means that an input for a later version can still be processed by the older versions. However, a disadvantage for the Protocol Buffers might be that it was developed for internal use, thus it was not optimized for unpredictable data (like linked data) [](cite:cites protobuf).
 
-##### TODO
-Explain what "forward- backward-compatible" means (https://www.beautifulcode.co/blog/88-backward-and-forward-compatibility-protobuf-versioning-serialization)
+Very similar to the Protocol Buffers are the Flat Buffers, which is developed by Google as well. It offers access to serialized data without parsing or unpacking, memory efficiency and speed, flexibility, a tiny code footprint, strong types and it claims to be convenient to use. It also offers cross platform code with no dependencies. However, it does not seem very usefull for linked data, hence no more than this brief summary will be given [](cite:cites flatbuf).
 
 #### HDT
 {:#formatting-hdt}
 
 HDT is a binary format to represent RDF data in a compact way. An HDT file is composed in three parts. The first part is the header, which provides metadata about the dataset in a plain RDF format. The second part is the dictionary, which brings a mapping between strings and unique identifiers. The last part are the triples, which encodes the RDF graph using unique identifiers [](cite:cites hdt).
+
+### RDF*
+RDF* (pronounced as ''RDF star'') is an extension to the Resource Description Framework. It enables RDF graphs to represent interactions and attributes through an implementation of embedded triples. Thus, by nesting triples, an entire triple can become the subject of a second triple. This eliminates the need for intermediary entities, making the model easier to understand. Even though RDF* offers many benefits, it is still under consideration by the W3C and is not yet officially accepted as a standard.
 
 ### Decoupling data
 Since RDF is used to decouple data from its scheme, data should be possible to be received from a database and turned into an RDF format. As an example to show this is possible, SQL will be taken into account. 
