@@ -1,4 +1,6 @@
 ## Data versioning
+{:#versioning}
+
 After we have defined the structure of the data, we can investigate how we can implement versioning datasets. Data versioning has two main advantages for both the data consumers and the providers. The first advantage for consumers is the ability to consider only data in a specified timeframe of interest. For example, a train schedule application does not require information about interruptions and delays from a month ago. Second, versioning allows the provider to define so-called ''snapshot'' versions, which correspond to checkpoints of the dataset. Consumers can reconstruct subsequent versions of the dataset by fetching only the deltas since a given snapshot. The benefit of these deltas is that the consumers do not need to download the entire dataset every time an update is published, they can download only the changes. For the providers, storing these deltas eliminates the need to store duplicate or redundant information.
 
 ### Git-based
@@ -38,6 +40,7 @@ The fifth type is very similar to the third type, except that the goal is to que
 Finally, the former query type also has a delta counterpart. The above query can also be modified to serve as an example for this type: ''on average, how many cars enter the car park per day?''.
 
 #### Storage
+{:#versioning-rdfarchives-storage}
 Depending on which query atoms should be optimized, a different storage strategy is preferred.
 
 1. **[IC] Independent Copies:**
@@ -51,13 +54,3 @@ The final strategy augments the stored triples with temporal validity informatio
 
 #### OSTRICH
 In addition to the above three storage techniques, [Taelman et al](cite:cites rdfostrich,rdfostrichfull) propose *OSTRICH* as a versioned ''hybrid IC-CB-TB'' storage mechanism. Because of this, OSTRICH is able to efficiently evaluate `VM`, `DM`, `SVQ` and `CVQ` queries and return the results as a stream of triples. Being a hybrid storage mechanism, the working of OSTRICH is inspired by combining the best properties and ideas of the other techniques. First, an immutable copy of the dataset is made, which serves as the initial version. This version is saved as an [`HDT`-file](#formatting-hdt). This format is a binary RDF representation which features both a high compression ratio, as well as indices to ''enable the efficient execution of triple pattern queries and count estimation''. All subsequent updates to the dataset are stored as deltas, which are also indexed and merged according to their timestamp to consume less disk space.
-
-### TODO
-- Live Open Data publishing in Flanders
-- hoe strikt zijn die requirements nodig bij git-based?
-- vergelijk "on a web of data streams" met git-based
-- RSP-QL = time context
-    - http://streamreasoning.github.io/RSP-QL/RSP_Requirements_Design_Document/
-
-#### Activity Streams 2 seems more useful for either Data versioning or Data formatting
-Activity Streams 2.0 [https://www.w3.org/TR/activitystreams-core/] are another specification by W3C. It specifies a model which represents activities using JSON. The most basic building block is an ‘Activity’ which describes an action. This specification seems to be lacking support for representing the history of updates, like there exist in specifications more focused towards events. The model does specify possibilities to make such a construction, for example using ‘Collection’ objects.
