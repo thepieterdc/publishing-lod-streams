@@ -35,9 +35,8 @@ Another methodology for caching Linked Open datasets is using a decentralized ca
 
 ### Caching in Content Delivery Networks
 Caching is a hot topic in the field of Content Delivery Networks (CDN), they depend on state of the art caching strategies to distribute internet content worldwide.
-This chapter will take a look at existing papers about these CDN caching stratefies and suggest how these can be used in the context of linked open data.
+This chapter will take a look at existing papers about these CDN caching strategies, that we think might be usefull in the context of linked open data, and suggest how these can be used.
 
 In Towards Lightweight and Robust Machine Learning for CDN Caching (ADD BIBTEX) they propose a supervised learning technique in which they train a lightweight boosted decision tree, using calculated optimal decisions from the past. They will use this model to update the cache in the present. This is called Learning From OPT (LFO). They state that this model achieves a 93% accuracy in predicting the OPT decisions, but their is a 20% gap in caching performance between OPT en LFO. So even tough the model predicts the absolute best decision in 93% of the cases, it's caching performance is significantly lower that the most optimal model. We feel that this method could also be applied as a caching strategy for query results caches of linked open data, but it still needs to be compared to other strategies described in the previous chapter.
 
-
-
+Current cache replacement algorithms mostly consider the frequency and locality of data. In A novel cache replacement policy for ISP merged CDN (ADD BIBTEX) they propose to use the access interval change rate as a better metric to update caches. They implemented a naive algorithm that uses this access interval change rate and compared it to basic algorithms such as LRU aand LFU. It showed that using the access interval change rate, resulted in a better cache performance. This method is fairly simple, yet still powerfull. In the chapter about pull-based strategies we saw that change rate methods also outperformed these basic algorithms, we feel that these algorithms might be of good use, if we want to implement a simple strategy.
