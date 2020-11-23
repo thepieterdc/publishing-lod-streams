@@ -63,4 +63,5 @@ To make this more clear, the structure of SQL is briefly mentioned. SQL has a ta
 However, a better approach for decoupling data would be using RML.
 
 #### RML
+{:#formatting-rml}
 RML is the RDF Mapping Language. This mapping language is defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model. Furthermore, RML is a superset of the W3C-standardized mapping language (= R2RML). RML provides a generic way of defining the mappings that is easily transferable to cover references to other data structures. Thus, RML is a very generic approach, but offers case-specific extensions. This makes it possible to transform any input (e.g., csv, json, relational databases, etc.) into RDF data [](cite:cites dimou2014rml).
