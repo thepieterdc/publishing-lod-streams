@@ -27,6 +27,9 @@ TODO
 
 - RSP-QL
 
+#### TripleWave
+TripleWave [](cite:cites mauri2016triplewave) is an open-source framework that allows the creation and the publishing of RDF streams. In the requirements chapter, the authors list seven requirements to which the framework must comply, particularly interesting are requirements R1 and R2, these state that "TripleWave may use streams available on the Web as input" and "TripleWave shall be able to process existing time-aware (RDF) datasets" (which could or could not be formatted as streams). These requirements imply that the framework has conversion mechanisms to transform this data. The framework uses CSV and JSON connectors to convert existing web streams, as well as R2RML (mentioned in chapter 2) for the generation of RDF streams.
+For consumption of the streams, the framework provides both a push-based and pull approach, using WebSockets, end users can subscribe to a TripleWave endpoint and get updates pushed to them. Alternatively, streams can also be published for the user to pull them.
 
 ### Activity Streams 2 seems more useful for either Data versioning or Data formatting
 Activity Streams 2.0 [https://www.w3.org/TR/activitystreams-core/] are another specification by W3C. It specifies a model which represents activities using JSON. The most basic building block is an ‘Activity’ which describes an action. This specification seems to be lacking support for representing the history of updates, like there exist in specifications more focused towards events. The model does specify possibilities to make such a construction, for example using ‘Collection’ objects.
