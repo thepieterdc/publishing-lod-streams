@@ -11,7 +11,7 @@ In the current state of the art, the nature of the data impacts the transmission
 
 ### Delivery Approaches
 
-#### Low level protocols
+#### Low-level protocols
 
 Various low-level protocols exist such as MQTT, AMQP, or CoAP. These protocols are focused on the transmission of data on constrained, low-level devices.
 [](cite:cites iotwang) shows a similar conclusion when comparing MQTT and HTTP on data from IoT devices, some datasets in [](cite:cites van2020comparing) will also certainly use IoT data. While the intention is not to use a lightweight, lower level protocol such as MQTT (instead the goal is to publish data on the web, using HTTP), it is valuable to look at what makes it the best option, i.e. the different communication model, and adapt the desired technology so it incorporates this.
