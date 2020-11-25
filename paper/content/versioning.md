@@ -16,7 +16,7 @@ Once the working groups have finished their subtasks, they should be able to int
 To enable distributing of the dataset across multiple servers, a synchronization mechanism is required to ensure every device has a consistent version of the dataset. In Git, this corresponds to having both a local copy of the repository, as well as a remote repository (via e.g. [GitHub](https://github.com/)). Subsequently, the local dataset can be updated via *pull* operations, whereas local changes can be *pushed* to the remote repository.
 
 ### RDF archives
-In addition to the Git-based approaches, techniques for archiving RDF data and executing queries on those archives are also gaining increased interest among researchers [](cite:cites rdfarchives,rdfquerytypes). RDF archives entail six different query types and three different storage strategies.
+Another approach that is gaining increased interest among researchers, are RDF archives [](cite:cites rdfarchives,rdfquerytypes). This approach describes a technique for archiving RDF data and executing queries on those archives. RDF archives entail six different query types and three different storage strategies.
 
 #### Query atoms
 The corresponding literature currently distinguishes six different types of queries, called *Query atoms*. These will be explained below using the example of a car park.
@@ -54,3 +54,5 @@ The final strategy augments the stored triples with temporal validity informatio
 
 #### OSTRICH
 In addition to the above three storage techniques, [Taelman et al.](cite:cites rdfostrich,rdfostrichfull) propose *OSTRICH* as a versioned ''hybrid IC-CB-TB'' storage mechanism. Because of this, OSTRICH is able to efficiently evaluate `VM`, `DM`, `SVQ` and `CVQ` queries and return the results as a stream of triples. Being a hybrid storage mechanism, the working of OSTRICH is inspired by combining the best properties and ideas of the other techniques. First, an immutable copy of the dataset is made, which serves as the initial version. This version is saved as an [`HDT`-file](#formatting-hdt). This format is a binary RDF representation which features both a high compression ratio, as well as indices to ''enable the efficient execution of triple pattern queries and count estimation''. All subsequent updates to the dataset are stored as deltas, which are also indexed and merged according to their timestamp to consume less disk space.
+
+The advantage of using OSTRICH over the aforementioned Git-based approach is that OSTRICH makes it possible to execute version-based queries, without requiring a materialization step. This vastly speeds up the entire query.
