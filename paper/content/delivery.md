@@ -7,7 +7,7 @@ In this chapter, we will discuss the transmission of the data to the users. Sinc
 
 The partitioning of the data will impact the transmission of it. Since we are working with event streams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
 
-In the current state of the art, the nature of the data impacts the transmission. In the case of real-time sensor data, for example, [](cite:cites atmoko2017) shows an MQTT-based approach and indicates that this is more efficient than regular HTTP. However, since the goal is the achieve a generic approach for each form of data, elements of different technologies will need to be combined.
+In the current state of the art, the nature of the data impacts the transmission. In the case of real-time sensor data, for example, [Atmoko et al.](cite:cites atmoko2017) describe an MQTT-based approach and indicate that this is more efficient than using regular HTTP. However, since the goal is the achieve a generic approach for each form of data, elements of different technologies will need to be combined.
 
 ### Delivery Approaches
 
