@@ -7,7 +7,7 @@ In this chapter, we will discuss the transmission of the data to the users. Sinc
 
 The partitioning of the data will impact the transmission of it. Since we are working with event streams, our architecture will be decentralized ([](cite:cites delva2020geospatial) also mentions storage and performance benefits, in comparison with a centralized, data-dump style approach).
 
-In the current state of the art, the form of the data impacts the transmission. In the case of real-time sensor data, for example, [](cite:cites atmoko2017) shows an MQTT-based approach an indicates that this is more efficient than regular HTTP, however, since the goal is the achieve a generic approach for each form of data, elements of different technologies will need to be combined.
+In the current state of the art, the nature of the data impacts the transmission. In the case of real-time sensor data, for example, [](cite:cites atmoko2017) shows an MQTT-based approach and indicates that this is more efficient than regular HTTP. However, since the goal is the achieve a generic approach for each form of data, elements of different technologies will need to be combined.
 
 ### Delivery Approaches
 
@@ -29,4 +29,3 @@ Other options include the utilization of **web feeds**, such as (most commonly) 
 
 
 **WebSub** [](cite:cites WebSub) is another protocol that provides publish-subscribe communication using HTTP. Previously known as PubSubHubbub, it was adopted by W3C in 2018. The protocol uses ‘Hubs’ as intermediary servers between the publishers, who own topics and update them, and subscribers, who subscribe to topics. Subscribers need to be network-accessible at all times using their "Subscriber Callback URL". Subscribers subscribe to a topic using HTTP POST to a hub and have to specify their callback URL. To publish a data update, publishers have to inform and update the hubs in some way, the protocol does not specify a mechanism, hence it can be chosen by the users. Hubs will then update the subscribers in realtime by sending updates to the specified callback URL. The specification recommends using HTTPS for all performed requests, it also specifies an extra security header namely "X-Hub-Signature" which can be used for extra authentication. This protocol might be of interest since it inherently supports decentralization, namely, hubs can be partitioned according to the needs of the user and so can the topic, i.e. topics could be duplicated across different hubs or could only be present on certain hubs. The downside to this protocol is that it requires the "clients" (i.e. the users of the data) to always be available over HTTP, so they would have to run a server.
-
