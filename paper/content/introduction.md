@@ -1,10 +1,4 @@
 ## Introduction
 {:#introduction}
 
-This is a great article  on the [Semantic Web](cite:cites semanticweb), written in Markdown.
-
-Make sure to [write your document effectively](https://www.principiae.be/book/pdfs/TM&Th-2.0-summary.pdf)!
-
-Write proper introduction.
-More information on snippets like this can be found on the [ScholarMarkdown wiki](https://github.com/rubensworks/ScholarMarkdown/wiki/Snippets).
-{:.todo}
+On top of the standard web which is used by humans, resides the Semantic Web. This variant of the web is an extension which is used by machines to automatically interpret documents on the web and as such extract information. This interpretation is facilitated through Linked Data, which augments the data with meta-information (data about the data), such as the location where it can find additional details.
