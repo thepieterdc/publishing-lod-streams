@@ -42,3 +42,19 @@ This chapter will take a look at existing papers about these CDN caching strateg
 In Towards Lightweight and Robust Machine Learning for CDN Caching (ADD BIBTEX) they propose a supervised learning technique in which they train a lightweight boosted decision tree, using calculated optimal decisions from the past. They will use this model to update the cache in the present. This is called Learning From OPT (LFO). They state that this model achieves a 93% accuracy in predicting the OPT decisions, but their is a 20% gap in caching performance between OPT en LFO. So even tough the model predicts the absolute best decision in 93% of the cases, it's caching performance is significantly lower that the most optimal model. We feel that this method could also be applied as a caching strategy for query results caches of linked open data, but it still needs to be compared to other strategies described in the previous chapter.
 
 Current cache replacement algorithms mostly consider the frequency and locality of data. In A novel cache replacement policy for ISP merged CDN (ADD BIBTEX) they propose to use the access interval change rate as a better metric to update caches. They implemented a naive algorithm that uses this access interval change rate and compared it to basic algorithms such as LRU aand LFU. It showed that using the access interval change rate, resulted in a better cache performance. This method is fairly simple, yet still powerfull. In the chapter about pull-based strategies we saw that change rate methods also outperformed these basic algorithms, we feel that these algorithms might be of good use, if we want to implement a simple strategy.
+
+### HTTP Caching
+
+Caching is used a lot on the world wide web, mostly in the form of HTTP caching. In this chapter we will discuss how HTTP caching works and compare it to other caching strategies discussed in previous paragraphs.
+HTTP caching is mostly used for caching results of an HTTP GET request. The parameters of caching are set in the headers of the replies.  We can give the cache-control header multiple values:
+1. No-store: do not cache this.
+2. No-cache: Cache this result, but everytime we need it, validate it by requesting the header again from the server
+3. Private: Only cache this in a private browser cache and not intermediate servers
+4. Public: This item can be cached everywhere
+5. Max-age=<seconds>: This will tell. The cache how long it can keep this item in cache without validating it
+6. Must-revalidate: instructs the cache to revalidate the content when it would be reused.
+
+If this header is not defined, the cache may use a heuristic that is 10% of the difference in time between the current timestamp and the timestamp in the last-modified header. We can compare this to previous discussed dynamic based algorithms.
+If a cached document has expired, there are 2 things that can happen: the document will be validated or fetched again.
+
+We see that all the different algorithms are either based on age or on dynamics. In the paragraph about pull based algorithms we discussed these kind of algorithms and we noticed that other approaches had a better performance. This is why we propose that in the context of large open data, these other approaches discussed in previous chapters could have a better performance.
