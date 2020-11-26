@@ -48,7 +48,7 @@ Current cache replacement algorithms mostly consider the frequency and locality 
 Caching is used a lot on the world wide web, mostly in the form of HTTP caching. In this chapter we will discuss how HTTP caching works and compare it to other caching strategies discussed in previous paragraphs.
 HTTP caching is mostly used for caching results of an HTTP GET request. The parameters of caching are set in the headers of the replies.  We can give the cache-control header multiple values:
 1. No-store: do not cache this.
-2. No-cache: Cache this result, but everytime we need it, validate it by requesting the header again from the server
+2. No-cache: Cache this result, but every time we need it, validate it by requesting the header again from the server
 3. Private: Only cache this in a private browser cache and not intermediate servers
 4. Public: This item can be cached everywhere
 5. Max-age=<seconds>: This will tell. The cache how long it can keep this item in cache without validating it
