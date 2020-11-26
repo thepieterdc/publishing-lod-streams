@@ -7,7 +7,7 @@ In this chapter, the way data is formatted is discussed. This chapter will descr
 {:#formatting-RDF}
 Before diving into the different formats to serialize Resource Description Framework (= RDF) data, some more information about RDF will be given. The goal of RDF is to create a general method to describe relations between data objects. The creation of RDF originates from the problem of the World Wide Web being made to be interpreted by humans and not by machines. RDF proves to be an efficient way of integrating information of different sources by decoupling the information from its original scheme. In short, RDF wants to make the Web interpretable by machines. The general purpose of RDF is to define a mechanism to describe resources without making any assumptions about the domain [](cite:cites lassila1998resource).
 
-One of the new features introduced in RDF 1.1 is the possibility to have named graphs. Since RDF 1.1, an RDF dataset may have multiple named graphs and at most one unnamed graph. This allows grouping of data, which gives extra context about which data belongs together [](cite:cites schreiber2014rdf). 
+One of the new features introduced in RDF 1.1 is the possibility to have named graphs. Since RDF 1.1, an RDF dataset may have multiple named graphs and at most one unnamed graph. This allows grouping of data, which gives extra context about which data belongs together [](cite:cites schreiber2014rdf). In other words, named graphs makes it possible to assign a URI to a collection of triples and makes it possible to make statements on the whole set.
 
 ### Data model
 <figure id="RDF">
