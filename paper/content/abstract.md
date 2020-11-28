@@ -1,15 +1,2 @@
 ## Abstract
-<!-- Context      -->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-<!-- Need         -->
-Vestibulum finibus dignissim augue, id pellentesque est facilisis non.
-<!-- Task         -->
-Donec fringilla dolor non neque iaculis blandit.
-<!-- Object       -->
-Praesent aliquet eleifend iaculis.
-<!-- Findings     -->
-Quisque pellentesque at odio ac bibendum.
-<!-- Conclusion   -->
-Pellentesque imperdiet felis urna, quis facilisis lacus gravida non.
-<!-- Perspectives -->
-Donec quis lectus eget sem tempor tristique pellentesque in dolor.
+The web as we know it cannot easily be interpreted by machines, due to a lack of context. This problem can be solved by augmenting resources on the web with semantic metadata, becoming linked data on the so called Semantic Web. An important issue is finding a generic approach to handle data in a streaming fashion and distributing updates in the dataset. More specifically, this paper will focus on getting updates to the end users as soon as possible, with little overhead. To accomplish this task, the applicability of existing technologies has been investigated. Our findings are that the original issue can be further divided into four subtasks: formatting, versioning, delivery and caching, each for which existing technologies can be used. A solution for the main issue must preferably be found by combining existing technologies, such as RDF archives, publish-subscribe patterns and HTTP caching into a generic approach, rather than by inventing new technologies.
