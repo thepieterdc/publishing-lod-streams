@@ -28,7 +28,7 @@ The first type of query is the most basic form of retrieval. Version materializa
 Subsequently, the consumer might be interested in obtaining the difference between two versions. This request is fulfilled using the second type of query. In order to enable this functionality, the system must support conflating several deltas into a new version to calculate the net differences. In the car park example, this would allow the consumer to retrieve a list of all cars that have entered the car park today.
 
 3. **[SVQ] Single-version structured queries:**
-Next, literature considers the evaluation of complex queries on one specific version of the dataset. This functionality is currently offered by SPARQL endpoints. An example query on the example situation could be: ''is there a blue car in the car park at January 1, 2020?''.
+Next, literature considers the evaluation of complex queries on one specific version of the dataset. This functionality is currently offered by SPARQL endpoints. An example query on the example situation could be: ''is there a blue car in the car park on January 1, 2020?''.
 
 4. **[SDQ] Single-delta structured queries:**
 The same analogy as with the first and second type of query can also be applied here. As an example, consider the following query: ''has a blue car entered the car park today?''.
@@ -44,7 +44,7 @@ Finally, the former query type also has a delta counterpart. The above query can
 Depending on which query atoms should be optimized, a different storage strategy is preferred.
 
 1. **[IC] Independent Copies:**
-The first technique simply creates a separate, isolated instance of the entire dataset every time a change is introduced. The advantage of this storage technique is a high performance for `VM`, `SVQ` and `CVQ` queries, but the downside is twofold. First of all, the duplication of the datasets will inevitably incur scalability issues. Additionally, since deltas do not exist, these must be calculated on-the-fly in order to evaluate delta-oriented queries. This task might be computationally expensive.
+The first technique simply creates a separate, isolated instance of the entire dataset every time a change is introduced. The advantage of this storage technique is high performance for `VM`, `SVQ` and `CVQ` queries, but the downside is twofold. First of all, the duplication of the datasets will inevitably incur scalability issues. Additionally, since deltas do not exist, these must be calculated on-the-fly in order to evaluate delta-oriented queries. This task might be computationally expensive.
 
 2. **[CB] Change-based approach:**
 The second technique relates more to the aforementioned Git-based approaches. This technique starts from an empty dataset and stores the changes (deltas). Consequently, this strategy addresses the scalability issues of the previous approach. Furthermore, this technique is very efficient to evaluate delta-based queries (`DM`, `SDQ`, `CDQ`), but requires these deltas to be conflated every time a version-based query is evaluated.
