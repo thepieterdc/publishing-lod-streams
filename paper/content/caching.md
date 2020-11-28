@@ -43,8 +43,7 @@ In Towards Lightweight and Robust Machine Learning for CDN Caching (ADD BIBTEX) 
 
 Current cache replacement algorithms mostly consider the frequency and locality of data. In A novel cache replacement policy for ISP merged CDN (ADD BIBTEX) they propose to use the access interval change rate as a better metric to update caches. They implemented a naive algorithm that uses this access interval change rate and compared it to basic algorithms such as LRU and LFU. It showed that using the access interval change rate, resulted in a better cache performance. This method is fairly simple, yet still powerfull. In the chapter about pull-based strategies we saw that change rate methods also outperformed these basic algorithms, we feel that these algorithms might be of good use, if we want to implement a simple strategy.
 
-### 
-Caching
+### HTTP Caching
 
 Caching is used a lot on the world wide web, mostly in the form of HTTP caching. In this chapter we will discuss how HTTP caching works and compare it to other caching strategies discussed in previous paragraphs.
 HTTP caching is mostly used for caching results of an HTTP GET request. The parameters of caching are set in the headers of the replies.  We can give the cache-control header multiple values:
