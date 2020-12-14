@@ -68,7 +68,7 @@ Very similar to the Protocol Buffers are the Flat Buffers, which are also develo
 #### Header Dictionary Triples (HDT)
 
 {:#formatting-hdt}
-HDT is a binary format to represent RDF data compactly. An HDT file combines three parts. The first part is the header, which provides metadata about the dataset in a plain RDF format. The second part is the dictionary, which brings a mapping between strings and unique identifiers. The last part contains the triples and encodes the RDF graph using unique identifiers [](cite:cites hdt).
+HDT is a binary format to represent RDF data in a compact way. An HDT file combines three parts. The first part is the header, which provides metadata about the dataset in a plain RDF format. The second part is the dictionary, which brings a mapping between strings and unique identifiers. The last part contains the triples and encodes the RDF graph using unique identifiers [](cite:cites hdt).
 
 ### RDF*
 RDF* (pronounced as ''RDF star'') is an extension to the Resource Description Framework. It enables RDF graphs to represent interactions and attributes by embeddeding triples. By nesting triples, an entire triple can become the subject of a second triple. This eliminates the need for intermediary entities, making the model easier to understand. Even though RDF* offers many benefits, it is still under consideration by the W3C and is not yet officially accepted as a standard.
