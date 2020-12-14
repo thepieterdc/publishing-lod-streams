@@ -57,7 +57,7 @@ Another option is to use Microdata. This format augments HTML webpages with spec
 
 #### Comma-Separated Values (CSV) on the web
 
-CSV is a popular format for publishing data. It is understandable by both humans and machines and it is typically presented in a table because of its structured format. CSV data also can easily be transformed to RDF data. One of the disadvantages of CSV is the absence of a mechanism to indicate the datatype of a specific column, which makes the data hard to validate. To solve this problem, CSV on the web augments the dataset with metadata, which makes it possible to give additional information about the data [](cite:cites tennison2016csv).
+CSV is a popular format for publishing data. It is understandable by both humans and machines and it is typically presented in a table because of its structured format. Additionally, CSV data can easily be transformed into RDF data. One of the disadvantages of CSV is the absence of a mechanism to indicate the datatype of a specific column, which makes the data hard to validate. To solve this problem, CSV on the web augments the dataset with metadata, which makes it possible to give additional information about the data [](cite:cites tennison2016csv).
 
 #### Protocol Buffers
 
