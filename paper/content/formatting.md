@@ -24,7 +24,7 @@ RDF is structured as a collection of triples. These triples can be visualized as
 An RDF triple represents a simple sentence. A commonly used example is the triple (Alice - Knows - Bob), which literally means "Alice knows Bob". However, such a triple is not required to be a literal translation. 
 
 ### Serialization format
-When thinking about RDF, it is important to note that RDF itself is not a data format, but a data model. It describes that the data should be represented with the (subject - predicate - object) triples form. Hence before an RDF graph can be published, it must be serialized using an RDF syntax. Some of the standardized syntaxes are described below [](cite:cites heath2011linked). 
+When thinking about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of `subject - predicate - object`. Hence, in order to publish an RDF graph, it must be serialized using an RDF syntax. Some of the standardized syntaxes are described below [](cite:cites heath2011linked). 
 
 #### RDF/XML
 
