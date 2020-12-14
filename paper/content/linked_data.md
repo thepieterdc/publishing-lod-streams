@@ -17,7 +17,7 @@ Alice also has a link called 'Name' to a data point with the value "Alice".
 It can be noticed that every object has at least one link, which will guarantee a 'web' of data.
 
 <figure id="LinkedData">
-<img src="images/linkeddata.png" alt="[RDF statement]">
+<img src="images/LinkedData.png" alt="[Linked Data]">
 <figcaption markdown="block">
 Example of a linked data web
 </figcaption>
