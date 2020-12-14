@@ -23,7 +23,7 @@ Unicode is at the base of the Semantic Web Stack because the Semantic Web must b
 
 #### Uniform Resource Identifier (URI)
 
-URI offers a uniform way to identify objects. It is often mistaken with Uniform Resource Locator (URL), but the big difference is that URL locates something, while URI identifies something. This means that every URL is a URI, but the opposite is not true [](cite:cites uri).
+A URI offers a uniform way to identify an object. This identifier is often confused with a *Uniform Resource Locator (URL)*, which *locates* an object, rather than *identifying* it. Consequently, every URL is an example of a URI, but the opposite is not true [](cite:cites uri).
 
 Together with [Unicode](#unicode), URI forms the base of the Semantic Web Stack. Both URI and Unicode enable the identification of resources on the Web in a uniform manner.
 
