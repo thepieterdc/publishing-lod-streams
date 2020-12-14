@@ -29,7 +29,7 @@ Together with [Unicode](#unicode), URI forms the foundations of the Semantic Web
 
 #### Extensible Markup Language (XML)
 
-XML is used to describe data. One of the most important characteristics of XML is its ability of structuring data in a flexible way. XML will define elements using so called ''tags''. Like this, every element will have both a start tag and an ending tag. Furthermore, XML supports nested elements, enabling the creation of hierarchies. XML is important because of its simplicity and extensibility.
+XML is used to describe data. One of the most important characteristics of XML is its ability of structuring data in a flexible way. XML defines elements using so-called ``tags'', with every element having both a start-tag and an end-tag. Furthermore, XML supports nested elements, enabling the creation of hierarchies. XML is important because of its simplicity and extensibility.
 
 #### Resource Description Framework (RDF) Model, Syntax and Schema
 
