@@ -28,7 +28,7 @@ When thinking about RDF, it is important to note that RDF itself is not a data f
 
 #### RDF/XML
 
-The RDF/XML syntax is one of the older RDF serialization syntaxes to publish Linked Data on the web. This syntax presents the RDF data model using XML. The popularity of this syntax is decreasing because humans have difficulty in reading and writing it [](cite:cites manola2004rdf).
+The RDF/XML syntax is one of the older RDF serialization syntaxes to publish Linked Data on the web. This syntax presents the RDF data model using XML. However, the popularity of this syntax is decreasing, because it is difficult for humans to interpret and write [](cite:cites manola2004rdf).
 
 #### Turtle and TriG
 
