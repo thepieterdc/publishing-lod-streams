@@ -33,4 +33,4 @@ XML is used to describe data. One of the most important characteristics of XML i
 
 #### Resource Description Framework (RDF) Model, Syntax and Schema
 
-RDF will give information in a describing way. This however will be too important for the following parts of this paper to be explained briefly. RDF is explained in [RDF](#formatting-RDF).
+The final element of the Semantic Web Stack is RDF, which is used to add meta-information to a dataset in a describing way. Due to the importance of RDF for the rest of this paper, it is explained in detail in [RDF](#formatting-RDF).
