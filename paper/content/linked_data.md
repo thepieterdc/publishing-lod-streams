@@ -1,3 +1,5 @@
+## Linked Data
+
 One of the most critical aspects of the semantic web is creating links between the data. 
 These links do not only allow humans to traverse the web, but they provide a simple way for machines to traverse the web as well. 
 This data is called linked data. These links are described in a standardized format called the Resource Description Framework (RDF).
