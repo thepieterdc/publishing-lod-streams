@@ -45,7 +45,9 @@ The N-Triples format is a subset of Turtle that lacks support for prefixes and a
 {:#formatting-json-ld}
 JSON-LD is a lightweight Linked Data format, based on the widely used JSON format for formatting data. Because of this and because of its popularity, readability and writability, JSON-LD is the ideal format to pass on Linked Data in a programming environment. Because JSON-LD uses the same syntax as JSON, it can easily be used to parse and manipulate RDF data [](cite:cites sporny2012json).
 
-#### RDF in Hypertext Markup Language (HTML)
+#### RDF in webpages
+
+Multiple formats can be used to embed RDF triples into existing webpages on the internet.
 
 RDFa is a serialization format that integrates the RDF triples into HTML documents. It does so by binding the RDF triples with the HTML Document Object Model (DOM). This means that the existing content of pages is shown, thanks to RDFa, inside the HTML code. Because of this, the structured data is exposed to the Web [](cite:cites adida2012rdfa).
 
