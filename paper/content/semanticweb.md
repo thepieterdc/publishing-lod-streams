@@ -5,7 +5,7 @@ To achieve this goal, a preliminary step is that publishers of data must be able
 
 ### Semantic Web Stack
 
-The architecture of the Semantic Web is based on a hierarchy of languages. In this hierarchy, the languages will use the languages lower in the hierarchy in order to achieve its goal. This hierarchy is visualized in [](#semanticstack). Only the most important layers for the understanding in this paper will be discussed.
+The architecture of the Semantic Web is based on a hierarchy of languages. In this hierarchy, the languages will use the languages lower in the hierarchy to achieve their goal. This strategy is visualized in [](#semanticstack). In this paper, only the most important layers will be discussed.
 
 <figure id="semanticstack">
 <img src="images/Semantic-Web-Stack.png" alt="[Semantic Web Stack]">
