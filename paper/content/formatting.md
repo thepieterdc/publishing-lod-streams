@@ -1,7 +1,7 @@
 ## Data formatting
 {:#formatting}
 
-In this section, the way data is formatted is discussed. This section will describe possible formats to serialize Resource Description Format (RDF) data, among which RDF/XML, RDFa, Turtle, N-Triples and JSON-LD. These different formats all have their own pros and cons, a detailed comparison will be given later. Furthermore, techniques to receive RDF data from other sources like databases will be discussed. This part will show how data from databases can be transformed into RDF data, so it can be used for Linked Data querying.
+In this section, different ways to format and serialize Resource Description Format (RDF) data. Examples of these formats include RDF/XML, RDFa, Turtle, N-Triples and JSON-LD. These different formats all have their own advantages and drawbacks, a detailed comparison will be provided later. Furthermore, techniques to receive RDF data from other sources like databases will be discussed. This part will show how data from databases can be transformed into RDF data, so it can be used for Linked Data querying.
 
 ### Resource Description Format (RDF)
 {:#formatting-RDF}
