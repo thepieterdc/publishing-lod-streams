@@ -49,7 +49,7 @@ JSON-LD is a lightweight Linked Data format, based on the widely used JSON forma
 
 Multiple formats can be used to embed RDF triples into existing webpages on the internet.
 
-RDFa is a serialization format that integrates the RDF triples into HTML documents. It does so by binding the RDF triples with the HTML Document Object Model (DOM). This means that the existing content of pages is shown, thanks to RDFa, inside the HTML code. Because of this, the structured data is exposed to the Web [](cite:cites adida2012rdfa).
+The first format is RDFa. This serialization format integrates RDF triples into HTML documents by binding the RDF triples with the HTML Document Object Model (DOM). This means that the existing content of pages is shown, thanks to RDFa, inside the HTML code. Because of this, the structured data is exposed to the web [](cite:cites adida2012rdfa).
 
 Microdata is another way of integrating RDF data into HTML. Microdata is used to provide specific machine-readable labels. It allows nested groups of name-value pairs to be added to documents in addition to the existing content. These groups are called items. To create an item, the itemscope attribute is used. An extra property can be added to an item with the itemprop attribute [](cite:cites microdata). This method is similar to RDFa.
 
