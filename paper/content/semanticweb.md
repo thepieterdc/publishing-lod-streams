@@ -31,6 +31,6 @@ Together with [Unicode](#unicode), URI forms the foundations of the Semantic Web
 
 XML is used to describe data. One of the most important characteristics of XML is its ability of structuring data in a flexible way. XML will define elements using so called ''tags''. Like this, every element will have both a start tag and an ending tag. Furthermore, XML supports nested elements, enabling the creation of hierarchies. XML is important because of its simplicity and extensibility.
 
-#### Resource Description Framework (RDF) Model, Syntax en Schema
+#### Resource Description Framework (RDF) Model, Syntax and Schema
 
 RDF will give information in a describing way. This however will be too important for the following parts of this paper to be explained briefly. RDF is explained in [RDF](#formatting-RDF).
