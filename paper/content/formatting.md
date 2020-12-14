@@ -38,7 +38,7 @@ TriG is an extension of Turtle. Just like Turtle, TriG defines a textual syntax 
 
 #### N-Triples
 
-The N-Triples format is a subset of Turtle that does not support prefixes and abbreviations. Because of this, N-triples is susceptible to redundancies. This causes the N-Triples files to typically be bigger than Turtle files. However, this redundancy has a huge advantage: because of it, N-Triples files can be processed one line at a time. Like this, it allows random access, which means that it can easily be compressed or probably be used in a stream. It is mostly used for files that are too big to fit into memory [](cite:cites beckett2014rdfntriples).
+The N-Triples format is a subset of Turtle that lacks support for prefixes and abbreviations. Consequently, this format is susceptible to both redundancies and larger file sizes when compared to Turtle. However, this redundancy also has an advantage, in a way that it allows line-by-line processing of N-Triples files. This allows for random access, straightforward compression and usage in streaming contexts. Currently, the format is mostly used for files that are too big to fit into memory [](cite:cites beckett2014rdfntriples).
 
 #### JSON-Linked Data (JSON-LD)
 
