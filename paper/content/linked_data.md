@@ -9,9 +9,16 @@ Four rules need to be followed to speak of linked data:
 2. These URIs have to be HTTP URIs.
 3. Data has to be found when we follow such a URI. This data can be formatted in many ways, such as RDF or XML.
 4. The data has to include links to other data. These links are vital to create a 'web' of data.
-An easy way to represent linked data is by using a directed graph. Figure (ADD FIGURE) is an example of such a graph. 
+An easy way to represent linked data is by using a directed graph. Figure [](#LinkedData) is an example of such a graph. 
 The vertices represent objects or data points, while the edges represent the links objects contain to other objects or data points.
-For example, in figure (ADD FIGURE) we can see an object Alice has a link called 'knows' to Bob. 
+For example, in figure [](#LinkedData) we can see an object Alice has a link called 'knows' to Bob. 
 This link looks like (Alice, 'knows', Bob) in an RDF triple, where Alice and Bob would be the respective URIs of these data points. 
 Alice also has a link called 'Name' to a data point with the value "Alice".  
 It can be noticed that every object has at least one link, which will guarantee a 'web' of data.
+
+<figure id="LinkedData">
+<img src="images/linkeddata.png" alt="[RDF statement]">
+<figcaption markdown="block">
+Example of a linked data web
+</figcaption>
+</figure>
