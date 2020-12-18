@@ -3,7 +3,7 @@
 One of the most critical aspects of the semantic web is creating links between the data. 
 These links do not only allow humans to traverse the web, but they provide a simple way for machines to traverse the web as well, and are described in a standardized framework called RDF.
 
-Four rules need to be followed to speak of linked data <span class="comment" data-author="HD">citation needed</span>: 
+Four rules need to be followed to speak of linked data [](cite:cites bizer2011linked): 
 
 1. Objects have to be identified through a unique resource identifier (URI).
 2. These URIs have to be HTTP URIs.
