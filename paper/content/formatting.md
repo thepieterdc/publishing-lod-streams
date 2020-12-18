@@ -22,12 +22,7 @@ RDF is structured as a collection of triples. These triples can be visualized as
 An RDF triple represents a simple sentence. A commonly used example is the triple (Alice - Knows - Bob), which means ``Alice knows Bob``. This example is visualized in listing [](#triple-example).
 
 <figure id="triple-example" class="listing">
-<pre><code>
-    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
-    _:alice foaf:knows _:bob .
-    _:bob foaf:knows _:alice .
-</pre></code>
+````/snippets/triple_example.ttl````
 <figcaption markdown="block">
 Visualization of RDF relations in Turle format, example from W3.org [^rdf-example].
 </figcaption>

@@ -28,7 +28,7 @@ The first type of query is the most basic form of retrieval. Version materializa
 Subsequently, the consumer might be interested in obtaining the differences between two versions. This request is fulfilled using the second type of query. In order to enable this functionality, the system must support conflating several deltas into a new version to calculate the net differences. In the car park example, this would allow the consumer to retrieve a list of all cars that have entered the car park today.
 
 3. **[SVQ] Single-version structured queries:**
-Next, literature considers the evaluation of complex queries on one specific version of the dataset. This functionality is currently offered by SPARQL <span class="comment" data-author="HD">has SPARQL been introduced yet?</span> endpoints. An example query on the example situation could be: ''is there a blue car in the car park on January 1, 2020?''.
+Next, literature considers the evaluation of complex queries on one specific version of the dataset. This functionality is currently offered by [SPARQL](#sparql) endpoints. An example query on the example situation could be: ''is there a blue car in the car park on January 1, 2020?''.
 
 4. **[SDQ] Single-delta structured queries:**
 The same analogy as with the first and second type of query can also be applied here. As an example, consider the following query: ''has a blue car entered the car park today?''.
