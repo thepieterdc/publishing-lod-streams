@@ -17,7 +17,7 @@ Semantic Web Stack (based on [](cite:cites semanticwebstack)). This image reflec
 #### Unicode
 {:#unicode}
 
-Unicode [^unicodespec] is a system that is used for consistent encoding, representation and handling of text. Similar to ASCII, Unicode was established to aid developers in the creation of applications. However, the advantage of Unicode is that it solves the problems that exist in previous encoding schemes, such as the inability to encode all characters. This problem in particular is tackled by assigning a identifier to each character on every platform, for every program and in every language [](cite:cites unicode).
+Unicode [^unicodespec] is a system that is used for consistent encoding, representation and handling of text. Similar to ASCII, Unicode was established to aid developers in the creation of applications. However, the advantage of Unicode is that it solves the problems that exist in previous encoding schemes, such as the inability to encode all characters. This problem in particular is tackled by assigning an identifier to each character on every platform, for every program and in every language.
 
 [^unicodespec]: https://unicode.org/standard/standard.html
 
