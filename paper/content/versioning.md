@@ -7,7 +7,7 @@ Data versioning has two main advantages for both the data consumers and the prov
 The first type of approach that is discussed is derived from the world of software engineering. Software developers use version control systems, such as Git or Mercurial, to work on the same source code files collaboratively. The same idea can be used to version data, as proposed by [Arndt et al.](cite:cites arndt2018). This paper formalizes the requirements for a git-based data versioning infrastructure as follows:
 
 1. **Support divergence of datasets:** 
-The more users that contribute to the dataset, the higher the probability that some users will disagree on how the dataset should evolve. Consider for example a dataset of train connections in Belgium. The set of contributors might be divided into smaller working groups, each with their dedicated focus. Some users might prefer to work on train stations in Ghent, others in Antwerp, etc. This concept corresponds to *branches* in Git.
+The more users that contribute to the dataset, the higher the probability that some users disagree on how the dataset should evolve. Consider for example a dataset of train connections in Belgium. The set of contributors might be divided into smaller working groups, each with their dedicated focus. Some users might prefer to work on train stations in Ghent, others in Antwerp, etc. This concept corresponds to *branches* in Git.
 
 2. **Conflate diverged datasets:**
 Once the working groups have finished their subtasks, they should be able to integrate their changes back into the upstream dataset. This is achieved through a *merging* process, similar to Git. When merging two branches, conflicts may arise in case other branches that touch the same data have already been integrated. The system must support both conflict detection and resolution to prevent compromising data integrity.
@@ -44,7 +44,7 @@ Finally, the previous query type also has a delta counterpart. The above query c
 Depending on which query atoms should be optimized, a different storage strategy is preferred.
 
 1. **[IC] Independent Copies:**
-The first technique simply creates a separate, isolated instance of the entire dataset every time a change is introduced. The advantage of this storage technique is high performance for `VM`, `SVQ` and `CVQ` queries, but the downside is twofold. First of all, the duplication of the datasets will inevitably incur scalability issues. Additionally, since deltas do not exist, these must be calculated on-the-fly in order to evaluate delta-oriented queries. This task might be computationally expensive.
+The first technique simply creates a separate, isolated instance of the entire dataset every time a change is introduced. The advantage of this storage technique is high performance for `VM`, `SVQ` and `CVQ` queries, but the downside is twofold. First of all, the duplication of the datasets inevitably incurs scalability issues. Additionally, since deltas do not exist, these must be calculated on-the-fly in order to evaluate delta-oriented queries. This task might be computationally expensive.
 
 2. **[CB] Change-based approach:**
 The second technique relates more to the aforementioned Git-based approaches. This technique starts from an empty dataset and stores the changes (deltas). Consequently, this strategy addresses the scalability issues of the previous approach. Furthermore, this technique is very efficient to evaluate delta-based queries (`DM`, `SDQ`, `CDQ`), but requires these deltas to be conflated every time a version-based query is evaluated.
