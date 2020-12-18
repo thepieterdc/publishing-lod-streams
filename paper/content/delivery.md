@@ -16,7 +16,9 @@ Various low-level protocols exist such as Message Queuing Telemetry Transport (M
 Furthermore, low-level protocols like MQTT suffer from security vulnerabilities [](cite:cites cve), which is problematic in the context of open data publishing. HTTP, on the other hand, is extremely established, mainstream and way less susceptible to the same type of problems. Hence choosing HTTP is a necessity in terms of security.
 
 #### HTTP-based approaches
-Other options include the use of **web feeds**, such as RDF Site Summary (RSS). [RSS](cite:cites rsspilgrim) publishes updates in a feed and allows users to access them in a standardized format. However, RSS is an umbrella term that spans different formats. Therefore, [Atom](cite:cites gregorio2005atom,ruby2008rss) was created, to achieve more standardization and disambiguation. It uses a separate protocol on top of HTTP. These two similar approaches to data publishing can both be considered, since the concept and use of web feeds is similar to what the event-based approach wants to achieve. 
+Other options include the use of **web feeds**, such as RDF Site Summary (RSS). [^rssspec] publishes updates in a feed and allows users to access them in a standardized format. However, RSS is an umbrella term that spans different formats. Therefore, [Atom](cite:cites gregorio2005atom,ruby2008rss) was created, to achieve more standardization and disambiguation. It uses a separate protocol on top of HTTP. These two similar approaches to data publishing can both be considered, since the concept and use of web feeds is similar to what the event-based approach wants to achieve. 
+
+[^rssspec]: https://www.xml.com/pub/a/2002/12/18/dive-into-xml.html
 
 **Linked Data Notifications** [](cite:cites LDN) [](cite:cites capadisli2017linked) (LDN) is another protocol developed by the W3C. It shares similarities with earlier discussed technologies such as Kafka and MQTT. Instead of a Broker, which is used by Apache Kafka to serve as an intermediary, it uses an Inbox, which serves as an intermediary between the Senders and Consumers. 
 <figure id="LDN">
