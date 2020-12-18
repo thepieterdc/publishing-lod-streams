@@ -24,9 +24,9 @@ Other options include the use of **web feeds**, such as RDF Site Summary (RSS). 
 
 **Linked Data Notifications** [](cite:cites LDN) [](cite:cites capadisli2017linked) (LDN) is another protocol developed by the W3C. It shares similarities with earlier discussed technologies such as Kafka and MQTT. Instead of a Broker, which is used by Apache Kafka to serve as an intermediary, it uses an Inbox, which serves as an intermediary between the Senders and Consumers. 
 <figure id="LDN">
-<img src="images/LDN.png" alt="[LDN model]">
+<img src="images/LDN.svg" alt="[LDN model]">
 <figcaption markdown="block">
-Linked Data Notifications delivery model [](cite:cites capadisli2017linked). Note the different HTTP requests indictated using the arrows, as discussed in the text. Also note the discovery of the inbox and notifications using RDF predicates. <span class="comment" data-author="SV">Blurryness should be fixed in the latex version, ScholarMarkdown automatically resizes the image</span>
+Linked Data Notifications delivery model [](cite:cites capadisli2017linked). Note the different HTTP requests indictated using the arrows, as discussed in the text. Also note the discovery of the inbox and notifications using RDF predicates.
 </figcaption>
 </figure>
 Senders make use of HTTP POST-requests which they send to the ‘Receiver’. The receiver is responsible for the Inbox, in which notifications are stored. Consumers also consult the receiver, with GET-requests, as their goal is to consume the data. As a response on the GET-request to the Inbox URL, the receiver returns a listing of all notifications. Each notification has a URI and must be an RDF source. The consumer can then request specific notifications from the Inbox. Each notification needs to have a JSON-LD content-type according to the specification, but other serializations are optional. This clearly shows the similarities with a system that uses Brokers. However, LDN seems less focused on continuously updating data and speed and more so on adaptability and the ability to use it in various different contexts as mentioned it [](cite:cites capadisli2017linked). Evaluating the performance of LDN, when speed is crucial, can be a topic for further research.
