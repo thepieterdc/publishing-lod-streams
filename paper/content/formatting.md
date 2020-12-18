@@ -1,7 +1,7 @@
 ## Data formatting
 {:#formatting}
 
-In this section, different ways to format and serialize Resource Description Format (RDF) data. <span class="comment" data-author="HD">RDF has already been defined</span> Examples of these formats include RDF/XML, RDFa, Turtle, N-Triples and JSON-LD. <span class="comment" data-author="HD">first mention of 'formats', previous occurence was 'to format' as a verb.</span> <span class="comment" data-author="HD">each format needs a reference to the spec</span> These different formats all have their own advantages and drawbacks, a detailed comparison is provided in this section. Furthermore, techniques to receive RDF data from other sources like databases is discussed. This part shows how data from databases can be transformed into RDF data, so it can be used for Linked Data querying.
+In this section, different ways to format and serialize RDF data is discussed. RDF data can be formatted into formats like RDF/XML [](cite:cites manola2004rdf), RDFa [](cite:cites herman2015rdfa), Turtle [](cite:cites beckett2014rdfturtle), N-Triples [](cite:cites beckett2014rdfntriples) and JSON-LD [](cite:cites sporny2012json). These different formats all have their own advantages and drawbacks, a detailed comparison is provided in this section. Furthermore, techniques to receive RDF data from other sources like databases is discussed. This part shows how data from databases can be transformed into RDF data, so it can be used for Linked Data querying.
 
 ### Resource Description Format (RDF)
 {:#formatting-RDF}
@@ -13,16 +13,30 @@ One of the new features introduced in [RDF 1.1](https://www.w3.org/TR/rdf11-conc
 <figure id="RDF">
 <img src="images/spo.png" alt="[RDF statement]">
 <figcaption markdown="block">
-Example of an RDF statement. <span class="comment" data-author="HD">statements aren't visual :) if anything, it's a single RDF triple visualized as a directed graph; every triple connects 2 labeled graph nodes with a directed labeled edge </span>
+Visualization of an RDF triple as a directed graph. This shows how a triple connects 2 labeled graph nodes with a directed labeled edge.
 </figcaption>
 </figure>
 
 RDF is structured as a collection of triples. These triples can be visualized as a node-arc-node link and consists of a subject, predicate and object, which is visualized in [](#RDF). Thus this collection of triples can be interpreted as a graph, with the arc pointing towards the object [](cite:cites klyne2009resource). 
 
-An RDF triple represents a simple sentence. A commonly used example is the triple (Alice - Knows - Bob) <span class="comment" data-author="HD">the peer review comments found this example confusing, if you want to write down a triple you should use one of the existing serializations</span>, which means "Alice knows Bob". 
+An RDF triple represents a simple sentence. A commonly used example is the triple (Alice - Knows - Bob), which means ``Alice knows Bob``. This example is visualized in listing [](#triple-example).
+
+<figure id="triple-example" class="listing">
+<pre><code>
+    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+    _:alice foaf:knows _:bob .
+    _:bob foaf:knows _:alice .
+</pre></code>
+<figcaption markdown="block">
+Visualization of RDF relations in Turle format, example from W3.org [^rdf-example].
+</figcaption>
+</figure>
+
+[^rdf-example]: https://www.w3.org/TR/turtle/
 
 ### Serialization format 
-When thinking about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of `subject - predicate - object`. Hence, in order to publish an RDF graph, it must be serialized using an RDF syntax. Some of the standardized syntaxes are described below [](cite:cites heath2011linked). <span class="comment" data-author="HD">if they are described below, why are you giving it an external reference?</span>
+When thinking about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of `subject - predicate - object`. Hence, in order to publish an RDF graph, it must be serialized using an RDF syntax [](cite:cites heath2011linked). Some of the standardized syntaxes are described below.
 
 <span class="comment" data-author="HD">you might want to include an example of each format, the descriptions are accurate enough, but not something people will read</span>
 
@@ -32,7 +46,7 @@ The _RDF/XML_ syntax is the original RDF serialization format to publish Linked 
 
 #### Turtle and TriG
 
-_Turtle_ is a serialization format for RDF data that exposes the data in plain text. This format provides prefixes for namespaces and other abbreviations. These prefixes are described at the top of the document. Additionally with Turtle, every triple has to end with either one of three defined suffixes. The first suffix is a comma (`,`). This suffix indicates that the next triple will have the same *subject* and *predicate* as the current triple, requiring nothing but the object on the next line. Alternatively, when a triple ends in a semicolon (`;`), the next triple will have the same subject (but a different predicate) as the current one. Finally, a triple can have a dot (`.`) as its suffix. This suffix signals that the following triple will not have anything in common with the current triple. The abbreviations of Turtle are non mandatory. As far as legibility is concerned, Turtle is considered one of the most readable and writable formats [](cite:cites beckett2014rdfturtle). 
+_Turtle_ is a serialization format for RDF data that exposes the data in plain text. This format provides prefixes for namespaces and other abbreviations. These prefixes are described at the top of the document. Additionally with Turtle, every triple has to end with either one of three defined suffixes. The first suffix is a comma (`,`). This suffix indicates that the next triple has the same *subject* and *predicate* as the current triple, requiring nothing but the object on the next line. Alternatively, when a triple ends in a semicolon (`;`), the next triple has the same subject (but a different predicate) as the current one. Finally, a triple can have a dot (`.`) as its suffix. This suffix signals that the following triple does not have anything in common with the current triple. The abbreviations of Turtle are non mandatory. As far as legibility is concerned, Turtle is considered one of the most readable and writable formats [](cite:cites beckett2014rdfturtle). 
 
 TriG is an extension of Turtle. Just like Turtle, TriG defines a textual syntax for RDF that allows an RDF dataset to be written in a compact and natural text form. TriG extends the functionalities of Turtle by bringing the possibility to group triples into multiple graphs. Furthermore, these named graphs (as described in [RDF](#formatting-RDF)) can be preceded by their names. This is so important because named graphs are a key concept of the Semantic Web [](cite:cites trig). 
 
@@ -43,7 +57,7 @@ The N-Triples format is a subset of Turtle that lacks support for prefixes and a
 #### JSON-Linked Data (JSON-LD)
 
 {:#formatting-json-ld}
-JSON-LD is a lightweight Linked Data format, based on the widely used JSON <span class="comment" data-author="HD">you have to define this abbreviation as well</span> format for formatting data. Because of this and because of its popularity, readability and writability, JSON-LD is the ideal format to pass on Linked Data in a programming environment. Because JSON-LD uses the same syntax as JSON, it can easily be used to parse and manipulate RDF data [](cite:cites sporny2012json).
+JSON-LD is a lightweight Linked Data format, based on the widely used JavaScript Object Notation (JSON) format for formatting data. Because of this and because of its popularity, readability and writability, JSON-LD is the ideal format to pass on Linked Data in a programming environment. Because JSON-LD uses the same syntax as JSON, it can easily be used to parse and manipulate RDF data [](cite:cites sporny2012json).
 
 #### RDF in webpages
 
@@ -59,9 +73,9 @@ CSV is a popular format for publishing data. It is understandable by both humans
 
 #### Protocol Buffers
 
-Protocol Buffers is a method of serializing structured data. It is developed by Google and it involves an interface description language for data. Google also provides a code generator for multiple programming languages. The goal of Protocol Buffers is simplicity and performance.  <span class="comment" data-author="HD">all these sentenced are loosely related statements, not a naturally flowing text. Merge them, or get rid of them</span> The data structures (referred to as messages) and services are described in a such called ''proto definition file''. To achieve high performance, those messages are serialized into a binary format for transmission. This makes it compact and both forward- and backward-compatible. This backward compatibility means that a change in the technology will not break older versions. The forward compatibility means that an input for a later version can still be processed by the older versions. However, a disadvantage for the Protocol Buffers might be that it was developed for internal use, thus it was not optimized for unpredictable data (like Linked Data) [](cite:cites protobuf).
+Protocol Buffers is a method of serializing structured data. The goal of Protocol Buffers is a combination of simplicity and performance. It is developed by Google and it involves an interface description language for data. The data structures (referred to as messages) and services are described in a such called ''proto definition file''. To achieve high performance, those messages are serialized into a binary format for transmission. This makes it compact and both forward- and backward-compatible. This backward compatibility means that a change in the technology will not break older versions. The forward compatibility means that an input for a later version can still be processed by the older versions. Another remark is that Google also provides a code generator for multiple programming languages. However, a disadvantage for the Protocol Buffers might be that it was developed for internal use, thus it was not optimized for unpredictable data (like Linked Data) [](cite:cites protobuf).
 
-Very similar to the Protocol Buffers are the Flat Buffers, which are also developed by Google. These offer access to serialized data without parsing or unpacking. Additionally, they focus on memory efficiency and speed, flexibility, a tiny code footprint, strong types and ease-of-use. Flat buffers work with cross-platform code without dependencies. However, this technology does not seem very useful for Linked Data, because it conflicts with key principles of Linked Data by forcing a scheme. Therefore we will not further discuss it here [](cite:cites flatbuf). <span class="comment" data-author="HD">'here' as in this paper, or this section?</span>
+Very similar to the Protocol Buffers are the Flat Buffers, which are also developed by Google. These offer access to serialized data without parsing or unpacking. Additionally, they focus on memory efficiency and speed, flexibility, a tiny code footprint, strong types and ease-of-use. Flat buffers work with cross-platform code without dependencies. However, this technology does not seem very useful for Linked Data, because it conflicts with key principles of Linked Data by forcing a scheme. Therefore this is not further discussed in this paper [](cite:cites flatbuf).
 
 #### Header Dictionary Triples (HDT)
 
