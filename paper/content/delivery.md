@@ -13,10 +13,12 @@ In the current state of the art, the nature of the data affects the transmission
 
 Various low-level protocols exist such as Message Queuing Telemetry Transport (MQTT), the Advanced Message Queuing Protocol (AMQP), or the Constrained Application Protocol (CoAP). These protocols are focused on the transmission of data on constrained, low-level devices. [Wang] shows a similar conclusion when comparing MQTT and HTTP on data from IoT devices. Some datasets used by [Van de Vyvere et al.](cite:cites van2020comparing) will also consist of IoT data. While, in this context, the intention is not to use a lightweight, lower level protocol such as MQTT (instead the goal is to publish data on the web, using HTTP), it is valuable to look at what makes it the best option, i.e. the different communication model, and adapt the desired technology so it incorporates this.
 
-Furthermore, low-level protocols like MQTT suffer from security vulnerabilities [](cite:cites cve), which is problematic in the context of open data publishing. HTTP, on the other hand, is extremely established, mainstream and way less susceptible to the same type of problems. Hence choosing HTTP is a necessity in terms of security.
+Furthermore, low-level protocols like MQTT suffer from security vulnerabilities [^cve], which is problematic in the context of open data publishing. HTTP, on the other hand, is extremely established, mainstream and way less susceptible to the same type of problems. Hence choosing HTTP is a necessity in terms of security.
+
+[^cve]: https://www.xml.com/pub/a/2002/12/18/dive-into-xml.html
 
 #### HTTP-based approaches
-Other options include the use of **web feeds**, such as RDF Site Summary (RSS). [^rssspec] publishes updates in a feed and allows users to access them in a standardized format. However, RSS is an umbrella term that spans different formats. Therefore, [Atom](cite:cites gregorio2005atom,ruby2008rss) was created, to achieve more standardization and disambiguation. It uses a separate protocol on top of HTTP. These two similar approaches to data publishing can both be considered, since the concept and use of web feeds is similar to what the event-based approach wants to achieve. 
+Other options include the use of **web feeds**, such as RDF Site Summary (RSS). RSS publishes updates in a feed and allows users to access them in a standardized format [^rssspec]. However, RSS is an umbrella term that spans different formats. Therefore, [Atom](cite:cites gregorio2005atom,ruby2008rss) was created, to achieve more standardization and disambiguation. It uses a separate protocol on top of HTTP. These two similar approaches to data publishing can both be considered, since the concept and use of web feeds is similar to what the event-based approach wants to achieve. 
 
 [^rssspec]: https://www.xml.com/pub/a/2002/12/18/dive-into-xml.html
 
