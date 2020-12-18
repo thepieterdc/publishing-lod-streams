@@ -19,10 +19,10 @@ Visualization of an RDF triple as a directed graph. This shows how a triple conn
 
 RDF is structured as a collection of triples. These triples can be visualized as a node-arc-node link and consists of a subject, predicate and object, which is visualized in [](#RDF). Thus this collection of triples can be interpreted as a graph, with the arc pointing towards the object [](cite:cites klyne2009resource). 
 
-An RDF triple represents a simple sentence. A commonly used example is the triple (Alice - Knows - Bob), which means ``Alice knows Bob``. This example is visualized in listing [](#triple-example).
+An RDF triple represents a simple sentence. A commonly used example is the triple (Alice - Knows - Bob), which means ``Alice knows Bob``. This example is visualized in [](#triple-example).
 
 <figure id="triple-example" class="listing">
-````/snippets/triple_example.ttl````
+````../snippets/triple_example.ttl````
 <figcaption markdown="block">
 Visualization of RDF relations in Turle format, example from W3.org [^rdf-example].
 </figcaption>
