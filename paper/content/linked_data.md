@@ -1,5 +1,8 @@
 ## Linked Data
 
+### TODO MAAK DING OVER SPARQL
+{:#sparql}
+
 One of the most critical aspects of the semantic web is creating links between the data. 
 These links do not only allow humans to traverse the web, but they provide a simple way for machines to traverse the web as well, and are described in a standardized framework called RDF.
 
