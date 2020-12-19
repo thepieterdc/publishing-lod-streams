@@ -18,10 +18,9 @@ Alice also has a link called 'Name' to a data point with the value "Alice".
 It can be noticed that every object has at least one link, which will guarantee a 'web' of data.
 
 <figure id="LinkedData">
-<img src="images/LinkedData.svg" alt="[Linked Data]">
+<img src="images/linked-data.svg" alt="[Linked Data]">
 <figcaption markdown="block">
-Example of a linked data web
-
+Example of a linked data web.
 </figcaption>
 </figure>
 
