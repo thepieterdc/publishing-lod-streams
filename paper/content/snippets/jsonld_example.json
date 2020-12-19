@@ -1,0 +1,10 @@
+[
+    {
+      "@id": "http://example.org/alice",
+      "http://schema.org/knows": [
+        {
+          "@id": "http://example.org/bob"
+        }
+      ]
+    }
+  ]
