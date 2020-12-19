@@ -1,7 +1,5 @@
 ## Linked Data
 
-### TODO MAAK DING OVER SPARQL
-{:#sparql}
 
 One of the most critical aspects of the semantic web is creating links between the data. 
 These links do not only allow humans to traverse the web, but they provide a simple way for machines to traverse the web as well, and are described in a standardized framework called RDF.
@@ -26,3 +24,11 @@ Example of a linked data web
 
 </figcaption>
 </figure>
+
+### SPARQL
+{:#sparql}
+
+SPARQL [](cite:cites world2013sparql) (a recursive acronym that stands for SPARQL Protocol and RDF Query Language) is a semantic query language, able to query and edit data stored in the RDF format. It is the standard query language for RDF and was adapted by W3C[^w3c] as a recommendation in 2008. SPARQL is comparable to SQL[sql], but where SQL operates on relational databases, SPARQL operates on the Semantic Web and while their functionality is not entirely the same, the style of querying information is very similar.
+
+[^w3c]: https://www.w3.org/blog/SW/2008/01/15/sparql_is_a_recommendation/
+[^sql]: https://docs.microsoft.com/en-us/sql/odbc/reference/structured-query-language-sql
