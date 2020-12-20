@@ -127,7 +127,7 @@
       <p>An RDF triple represents a simple sentence. A commonly used example is the triple (<code>Alice - Knows - Bob</code>), which means that the subject ‘‘Alice’’, knows the object of the triple ‘‘Bob’’.</p>
 
       <h3 id="serialization-format">Serialization format</h3>
-      <p>When reasoning about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of <code>subject - predicate - object</code>. Hence, to publish an RDF graph, it must be serialized using an RDF syntax <span class="references">[<a href="#ref-14">14</a>]</span>. Some of the standardized syntaxes are described below, each with the corresponding notation of the &#8220;Alice - Knows - Bob` example.</p>
+      <p>When reasoning about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of <code>subject - predicate - object</code>. Hence, to publish an RDF graph, it must be serialized using an RDF syntax <span class="references">[<a href="#ref-14">14</a>]</span>. Some of the standardized syntaxes are described below, each with the corresponding notation of the <code>Alice - Knows - Bob</code> example.</p>
 
       <h4 id="rdfxml">RDF/XML</h4>
 
@@ -261,7 +261,7 @@
       <h3 id="rdf">RDF*</h3>
       <p>RDF* (pronounced as ‘‘RDF star’’) is an extension to the Resource Description Framework, which enables RDF graphs to represent interactions and attributes by embedding triples. By nesting triples, an entire triple can become the subject of a second triple. This eliminates the need for intermediary entities, making the model easier to understand. Even though RDF* offers many benefits, it is still under consideration by the W3C and is not yet officially accepted as a standard.</p>
 
-      <h3 id="decoupling-data">Decoupling data</h3>
+      <h3 id="formatting-decoupling">Decoupling data</h3>
       <p>Since RDF is used to decouple data from its scheme, it should be possible to receive an arbitrary dataset (structured as e.g. CSV, XML, JSON or in a database), and transform this into an RDF format. To facilitate this, the RDF Mapping Language (RML) is used to materialize data into RDF triples.</p>
 
       <p>RML is defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model. Furthermore, RML is a superset of the W3C-standardized mapping language (R2RML). RML provides a generic way of defining the mappings that is easily transferable to cover references to other data structures. Thus, RML is a generic approach, but offers case-specific extensions. This makes it possible to transform any input (e.g., CSV, JSON, relational databases, etc.) into RDF data <span class="references">[<a href="#ref-21">21</a>]</span>.</p>
@@ -476,7 +476,7 @@ The final strategy augments the stored triples with temporal validity informatio
 
       <p>Secondly, Yi et al. <span class="references">[<a href="#ref-42">42</a>]</span> propose a two-layer caching mechanism. The first layer implements the Adaptive Replacement Cache-memory algorithm (ARC) and operates in memory. The purpose of this layer is to cache all the frequently used queries that are either not complicated, or for which the result set is small. The other cases are handled by the second layer. This layer is a key-value database that is only partially running in memory. The approach has been compared to existing techniques on the OLTP-trace test set. The results prove that the proposed method has a higher hit ratio, more specifically for a cache size of 1000 entries, an LRU approach has a 0.43134 hit rate, while the ARC algorithm achieves a 0.44938 hit rate.</p>
 
-      <p>The final method for caching Linked Open datasets is the CyCLaDEs approach, proposed by Folz et al. <span class="references">[<a href="#ref-43">43</a>]</span>. This approach consists of a decentralized cache that uses a ‘‘neighborhood’’ of clients. Every client in the same neighborhood hosts related fragments in their cache. Subsequently, a new client will first contact clients in this neighborhood before querying the server. This idea assumes that clients that have had similar queries in the past will also perform similar queries in the future. The algorithm first constructs a random subset of clients and then selects the <code>k</code> clients that are the most similar, to compose a neighborhood. Each client uses an LRU cache with a fixed size. It might be useful to combine this decentralized cache system with the two layer cache mechanism described above. The authors conclude that their decentralized approach is able to handle a lot of queries that a single local cache would miss. Furthermore, the CyCLaDEs approach with ten neighbors was compared to existing caching approaches on the BSBM-1M dataset. In both cases, the local caches can handle 40% of the total requests, but in the CyCLaDEs approach, 22% of the requests could be served from the neighborhood. They propose that their method could indeed be used in applications where the load on the main server can be very high. The authors did not explicitly investigate this, but this can be compared in future work.</p>
+      <p>The final method for caching Linked Open datasets is the <em>CyCLaDEs</em> approach, proposed by Folz et al. <span class="references">[<a href="#ref-43">43</a>]</span>. This approach consists of a decentralized cache that uses a ‘‘neighborhood’’ of clients. Every client in the same neighborhood hosts related fragments in their cache. Subsequently, a new client will first contact clients in this neighborhood before querying the server. This idea assumes that clients that have had similar queries in the past will also perform similar queries in the future. The algorithm first constructs a random subset of clients and then selects the <code>k</code> clients that are the most similar, to compose a neighborhood. Each client uses an LRU cache with a fixed size. It might be useful to combine this decentralized cache system with the two layer cache mechanism described above. The authors conclude that their decentralized approach is able to handle a lot of queries that a single local cache would miss. Furthermore, the CyCLaDEs approach with ten neighbors was compared to existing caching approaches on the BSBM-1M dataset. In both cases, the local caches can handle 40% of the total requests, but in the CyCLaDEs approach, 22% of the requests could be served from the neighborhood. They propose that their method could indeed be used in applications where the load on the main server can be very high. The authors did not explicitly investigate this, but this can be compared in future work.</p>
 
       <h3 id="http-caching">HTTP Caching</h3>
       <p>Caching is used a lot on the Web, mostly in the form of HTTP caching. Given the many different HTTP methods that exist, it only makes sense to cache <em>safe</em> requests that do not modify the state of the server, since these cannot invalidate the data. The most prominent examples of these requests are <code>HEAD</code>, <code>GET</code>, and <code>OPTIONS</code> requests, of which <code>GET</code> requests are the most common. In order to indicate how a request can be cached, the server can include a <code>Cache-Control</code> header in the response. This response has several possible values, multiple can be combined.</p>
@@ -497,7 +497,7 @@ The final strategy augments the stored triples with temporal validity informatio
       <p>Note that HTTP caching only uses age or dynamics, which corresponds to the pull-based approaches described in <a href="#caching-pullbased">Subsection 7.1</a>. It was argued that push-based approaches had a better performance, which is why we propose that further research is required towards applying push-based approaches in HTTP communication.</p>
 
       <h3 id="caching-in-content-delivery-networks">Caching in Content Delivery Networks</h3>
-      <p>An example of an intermediary in HTTP caching is a Content Delivery Networks (CDN), which distributes cached copies of webpages over multiple servers that are located around the world. As a result, the perceived performance of a website no longer depends on the distance of the client to the server. Since these networks rely heavily on state of the art caching strategies, it is worth investigating scientific literature that considers Content Delivery Networks and try to apply the findings to Linked Open Data.</p>
+      <p>An example of an intermediary in HTTP caching is a <em>Content Delivery Networks (CDN)</em>, which distributes cached copies of webpages over multiple servers that are located around the world. As a result, the perceived performance of a website no longer depends on the distance of the client to the server. Since these networks rely heavily on state of the art caching strategies, it is worth investigating scientific literature that considers Content Delivery Networks and try to apply the findings to Linked Open Data.</p>
 
       <!-- Not "Berget et al.", it's one person -->
       <p>The first technique is proposed by <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3286062.3286082"><a href="https://doi.org/10.1145/3286062.3286082">Berger</a></span> <span class="references">[<a href="#ref-44">44</a>]</span> and concerns a supervised learning technique to train a lightweight boosted decision tree, using calculated <em>optimal decisions (OPT)</em> from the past. This model is subsequently used to update the cache in the present, a technique called <em>Learning from OPT (LFO)</em>. The authors state that this model achieves an accuracy of 93% in predicting the OPT decisions, but there is a 20% gap in caching performance between OPT and LFO. So even though the model predicts the best decision in 93% of the cases, its caching performance is significantly lower than the most optimal model. We argue that this method could also be applied as a caching strategy for query results caches of linked open data, but it still needs to be compared to other strategies described in the previous sections.</p>
@@ -519,17 +519,17 @@ The final strategy augments the stored triples with temporal validity informatio
       <p>The Internet of Things has caused a shift in the data landscape. Sensors publish data at high frequency into the cloud, so that it does not always make sense to use polling-based approaches. Instead, it is much more efficient to treat these values in a <a href="#delivery">push-based</a> streaming fashion <span class="references">[<a href="#ref-46">46</a>]</span>. To manage these data streams, Stream Processing Engines have seen the light. However, since the contents of the stream can be in all shapes and sizes, a Web of Data-counterpart was needed. This has lead to the creation of RDF Stream Processing techniques, which allow to process RDF-based data streams using various operations such as filtering and aggregating.</p>
 
       <h4 id="streaming-rdfsp-triplewave">TripleWave</h4>
-      <p>TripleWave is an open-source framework that allows the creation and the publishing of RDF streams. In their requirements section, Mauri et al. <span class="references">[<a href="#ref-47">47</a>]</span> list seven requirements to which the framework must comply. The most interesting requirements are <code>R1</code> and <code>R2</code>, which respectively state that “TripleWave may use streams available on the Web as input” and that “TripleWave shall be able to process existing time-aware (RDF) datasets” (which could either be formatted as a stream or not). These requirements imply that the framework has conversion mechanisms to transform this data. The framework uses CSV and JSON connectors to convert existing web streams, as well as <a href="#formatting-rml">R2RML</a> for the generation of RDF streams.</p>
+      <p>TripleWave is an open-source framework that allows the creation and the publishing of RDF streams. In their requirements section, Mauri et al. <span class="references">[<a href="#ref-47">47</a>]</span> list seven requirements to which the framework must comply. The most interesting requirements are <code>R1</code> and <code>R2</code>, which respectively state that “TripleWave may use streams available on the Web as input” and that “TripleWave shall be able to process existing time-aware (RDF) datasets” (which could either be formatted as a stream or not). These requirements imply that the framework has conversion mechanisms to transform this data. The framework uses CSV and JSON connectors to convert existing web streams, as well as <a href="#formatting-decoupling">R2RML</a> for the generation of RDF streams.</p>
 
       <p>For consumption of the streams, the framework provides both a push-based and pull approach, using WebSockets, end users can subscribe to a TripleWave endpoint and get updates pushed to them. Alternatively, streams can also be published for the user to pull them.</p>
 
       <h4 id="web-stream-processors">Web Stream Processors</h4>
-      <p>Dell’Aglio et al. <span class="references">[<a href="#ref-46">46</a>]</span> propose an infrastructure that is capable of handling <a href="#streaming-rdfsp-triplewave">TripleWave streams</a> as input, and impose seven requirements for a Web of Data Streams, called Web Stream Processors (WeSP). These requirements are inspired by previous work from <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/1107499.1107504"><a href="https://doi.org/10.1145/1107499.1107504">Stonebraker et al.</a></span> <span class="references">[<a href="#ref-48">48</a>]</span></p>
+      <p><a property="schema:citation http://purl.org/spar/cito/cites" href="https://doi.org/10.5167/uzh-149682">Dell’Aglio et al.</a> <span class="references">[<a href="#ref-46">46</a>]</span> propose an infrastructure that is capable of handling <a href="#streaming-rdfsp-triplewave">TripleWave streams</a> as input, and impose seven requirements for a Web of Data Streams, called <em>Web Stream Processors (WeSP)</em>. These requirements are inspired by previous work from <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/1107499.1107504"><a href="https://doi.org/10.1145/1107499.1107504">Stonebraker et al.</a></span> <span class="references">[<a href="#ref-48">48</a>]</span>.</p>
 
       <ol>
         <li>
           <p><strong>Keep the data moving:</strong>
-The first requirement states that <em>WeSP must prioritize active paradigms for data stream exchange, where the data supplier can push the stream content to the actors interested in it</em>. This means that instead of using polling-based approaches, data publishers must push updates to subscribers. This has been discussed in <a href="#delivery">Data delivery</a> and matches the findings for low latency updates by Van de Vyvere et al. <span class="references">[<a href="#ref-31">31</a>, <a href="#ref-40">40</a>]</span>, since streams with high frequency correspond to real-time data flows.</p>
+The first requirement is that <em>WeSP must prioritize active paradigms for data stream exchange, where the data supplier can push the stream content to the actors interested in it</em>. This means that instead of using polling-based approaches, data publishers must push updates to subscribers. This has been discussed in <a href="#delivery">Data delivery</a> and matches the findings for low latency updates by Van de Vyvere et al. <span class="references">[<a href="#ref-31">31</a>, <a href="#ref-40">40</a>]</span>, since streams with high frequency correspond to real-time data flows.</p>
         </li>
         <li>
           <p><strong>Stored and streamed data:</strong>
@@ -537,7 +537,7 @@ As a second requirement, <em>WeSP must enable the combination of streaming and s
         </li>
         <li>
           <p><strong>High availability, distribution and scalability:</strong>
-Next, [Dell’Aglio et al. require that <em>WeSP must enable the possibility to build reliable, distributed and scalable streaming applications</em>. Obtaining high availability is possible using either one of the provided <a href="#versioning">Data versioning</a> approaches. The Git-based approaches in particular allow a dataset to be distributed efficiently across multiple devices and therefore improve the scalability and reliability. Depending on the frequency of the updates, the reliability can be further improved through caching.</p>
+Next, <a property="schema:citation http://purl.org/spar/cito/cites" href="https://doi.org/10.5167/uzh-149682">Dell’Aglio et al.</a> <span class="references">[<a href="#ref-46">46</a>]</span> require that <em>WeSP must enable the possibility to build reliable, distributed and scalable streaming applications</em>. Obtaining high availability is possible using either one of the provided <a href="#versioning">Data versioning</a> approaches. The Git-based approaches in particular allow a dataset to be distributed efficiently across multiple devices and therefore improve the scalability and reliability. Depending on the frequency of the updates, the reliability can be further improved through caching.</p>
         </li>
         <li>
           <p><strong>Operations on the stream content:</strong>
@@ -553,7 +553,7 @@ The penultimate requirement is that <em>WeSP should support the exchange of a wi
         </li>
         <li>
           <p><strong>Reuse of technologies and standards:</strong>
-Finally, <em>WeSP should exploit as much as possible existing protocols and standards</em>. A manifold of existing technologies and infrastructures already exist. In the context of <a href="#formatting">formatting</a>, <a href="#versioning">versioning</a>, <a href="#delivery">delivery</a> and <a href="#caching">caching</a>, this paper has provided sufficient examples. These existing technologies should be reused whenever possible to encourage interoperability. While starting from scratch can often give good results on a local scale (e.g. devising a format that is specifically created for the particular use case of the data), but prevents the technology from being globally adopted.</p>
+Finally, <em>WeSP should exploit as much as possible existing protocols and standards</em>. A manifold of existing technologies and infrastructures already exist. In the context of <a href="#formatting">formatting</a>, <a href="#versioning">versioning</a>, <a href="#delivery">delivery</a>, and <a href="#caching">caching</a>, this paper has provided sufficient examples. These existing technologies should be reused whenever possible to encourage interoperability. While starting from scratch can often give good results on a local scale (e.g. devising a format that is specifically created for the particular use case of the data), but prevents the technology from being globally adopted.</p>
         </li>
       </ol>
 
@@ -577,7 +577,7 @@ Finally, <em>WeSP should exploit as much as possible existing protocols and stan
   <dt id="ref-1">[1]</dt>
   <dd resource="#bizer2011linked" typeof="schema:Chapter">Bizer, C., Heath, T., Berners-Lee, T.: Linked data: The story so far. In: Semantic services, interoperability and web applications: emerging concepts. pp. 205–227. IGI Global (2011).</dd>
   <dt id="ref-2">[2]</dt>
-  <dd resource="#lassila1998resource" typeof="schema:CreativeWork">Lassila, O.: Resource Description Framework (RDF) Model and Syntax Specification. W3C (1999).</dd>
+  <dd resource="https://www.w3.org/TR/1999/REC-rdf-syntax-19990222/" typeof="schema:CreativeWork">Lassila, O.: Resource Description Framework (RDF) Model and Syntax Specification. W3C, <a href="https://www.w3.org/TR/1999/REC-rdf-syntax-19990222/">https:/​/​www.w3.org/TR/1999/REC-rdf-syntax-19990222/</a> (1999).</dd>
   <dt id="ref-3">[3]</dt>
   <dd resource="https://dx.doi.org/10.1007/978-3-642-33158-9_7" typeof="schema:CreativeWork">Phuoc, D., Parreira, J., Hauswirth, M.: Linked Stream Data Processing. Presented at the September (2012).</dd>
   <dt id="ref-4">[4]</dt>
@@ -591,19 +591,19 @@ Finally, <em>WeSP should exploit as much as possible existing protocols and stan
   <dt id="ref-8">[8]</dt>
   <dd resource="#herman2015rdfa" typeof="schema:CreativeWork">Herman, I., Adida, B., Sporny, M., Birbeck, M.: RDFa 1.1 Primer-Rich Structured Data Markup for Web Documents (2015).</dd>
   <dt id="ref-9">[9]</dt>
-  <dd resource="#beckett2014rdfturtle" typeof="schema:CreativeWork">Carothers, G., Prud’hommeaux, E.: RDF 1.1 Turtle. W3C (2014).</dd>
+  <dd resource="https://www.w3.org/TR/2014/REC-turtle-20140225/" typeof="schema:CreativeWork">Carothers, G., Prud’hommeaux, E.: RDF 1.1 Turtle. W3C, <a href="https://www.w3.org/TR/2014/REC-turtle-20140225/">https:/​/​www.w3.org/TR/2014/REC-turtle-20140225/</a> (2014).</dd>
   <dt id="ref-10">[10]</dt>
-  <dd resource="#beckett2014rdfntriples" typeof="schema:CreativeWork">Carothers, G., Seaborne, A.: RDF 1.1 N-Triples. W3C (2014).</dd>
+  <dd resource="https://www.w3.org/TR/2014/REC-n-triples-20140225/" typeof="schema:CreativeWork">Carothers, G., Seaborne, A.: RDF 1.1 N-Triples. W3C, <a href="https://www.w3.org/TR/2014/REC-n-triples-20140225/">https:/​/​www.w3.org/TR/2014/REC-n-triples-20140225/</a> (2014).</dd>
   <dt id="ref-11">[11]</dt>
   <dd resource="#sporny2012json" typeof="schema:Article">Sporny, M., Longley, D., Kellogg, G., Lanthaler, M., Birbeck, M.: JSON-LD Syntax 1.0. W3C Community Group Final Specification. (2012).</dd>
   <dt id="ref-12">[12]</dt>
-  <dd resource="#schreiber2014rdf" typeof="schema:Article">Schreiber, A.T., Raimond, Y.: RDF 1.1 Primer. (2014).</dd>
+  <dd resource="https://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/" typeof="schema:CreativeWork">Raimond, Y., Schreiber, G.: RDF 1.1 Primer. W3C, <a href="https://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/">https:/​/​www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/</a> (2014).</dd>
   <dt id="ref-13">[13]</dt>
-  <dd resource="#klyne2009resource" typeof="schema:CreativeWork">Carroll, J., Klyne, G.: Resource Description Framework (RDF): Concepts and Abstract Syntax. W3C (2004).</dd>
+  <dd resource="https://www.w3.org/TR/2004/REC-rdf-concepts-20040210/" typeof="schema:CreativeWork">Carroll, J., Klyne, G.: Resource Description Framework (RDF): Concepts and Abstract Syntax. W3C, <a href="https://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">https:/​/​www.w3.org/TR/2004/REC-rdf-concepts-20040210/</a> (2004).</dd>
   <dt id="ref-14">[14]</dt>
   <dd resource="#heath2011linked" typeof="schema:Article">Heath, T., Bizer, C.: Linked data: Evolving the web into a global data space. Synthesis lectures on the semantic web: theory and technology. 1, 1–136 (2011).</dd>
   <dt id="ref-15">[15]</dt>
-  <dd resource="#trig" typeof="schema:Article">Bizer, C., Cyganiak, R., Carothers, G., Seaborne, A.: RDF 1.1 TriG. (2014).</dd>
+  <dd resource="https://www.w3.org/TR/2014/REC-trig-20140225/" typeof="schema:CreativeWork">Seaborne, A., Carothers, G.: RDF 1.1 TriG. W3C, <a href="https://www.w3.org/TR/2014/REC-trig-20140225/">https:/​/​www.w3.org/TR/2014/REC-trig-20140225/</a> (2014).</dd>
   <dt id="ref-16">[16]</dt>
   <dd resource="#microdata" typeof="schema:CreativeWork">’chaals’ (McCathie) Nevile, C., Brickley, D., Hickson, I.: HTML Microdata. W3C (2018).</dd>
   <dt id="ref-17">[17]</dt>
@@ -617,7 +617,7 @@ Finally, <em>WeSP should exploit as much as possible existing protocols and stan
   <dt id="ref-21">[21]</dt>
   <dd resource="http://ceur-ws.org/Vol-1184/ldow2014_paper_01.pdf" typeof="schema:Article">Dimou, A., Vander Sande, M., Colpaert, P., Verborgh, R., Mannens, E., Van de Walle, R.: RML: A Generic Language for Integrated RDF Mappings of Heterogeneous Data. In: Bizer, C., Heath, T., Auer, S., and Berners-Lee, T. (eds.) Proceedings of the 7th Workshop on Linked Data on the Web (2014).</dd>
   <dt id="ref-22">[22]</dt>
-  <dd resource="#world2013sparql" typeof="schema:Article">Consortium, W.W.W., others: SPARQL 1.1 overview. (2013).</dd>
+  <dd resource="https://www.w3.org/TR/2013/REC-sparql11-overview-20130321/" typeof="schema:CreativeWork">SPARQL 1.1 Overview. W3C, <a href="https://www.w3.org/TR/2013/REC-sparql11-overview-20130321/">https:/​/​www.w3.org/TR/2013/REC-sparql11-overview-20130321/</a> (2013).</dd>
   <dt id="ref-23">[23]</dt>
   <dd resource="https://dx.doi.org/10.1016/j.websem.2018.08.002" typeof="schema:Article">Arndt, N., Naumann, P., Radtke, N., Martin, M., Marx, E.: Decentralized Collaborative Knowledge Management Using Git. Journal of Web Semantics. 54, (2018).</dd>
   <dt id="ref-24">[24]</dt>
@@ -639,13 +639,13 @@ Finally, <em>WeSP should exploit as much as possible existing protocols and stan
   <dt id="ref-32">[32]</dt>
   <dd resource="#gregorio2005atom" typeof="schema:CreativeWork">Gregorio, J., de hOra, B.: The Atom Publishing Protocol. RFC Editor (2007).</dd>
   <dt id="ref-33">[33]</dt>
-  <dd resource="#ruby2008rss" typeof="schema:Article">Ruby, S.: Rss 2.0 and atom 1.0 compared. Internet: <a href="http://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared,">http:/​/​www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared,</a> Sep. 10, (2008).</dd>
+  <dd resource="http://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared" typeof="schema:Article">Ruby, S.: Rss 2.0 and atom 1.0 compared. 10, (2008).</dd>
   <dt id="ref-34">[34]</dt>
-  <dd resource="#LDN" typeof="schema:CreativeWork">Guy, A., Capadisli, S.: Linked Data Notifications. W3C (2017).</dd>
+  <dd resource="https://www.w3.org/TR/2017/REC-ldn-20170502/" typeof="schema:CreativeWork">Guy, A., Capadisli, S.: Linked Data Notifications. W3C, <a href="https://www.w3.org/TR/2017/REC-ldn-20170502/">https:/​/​www.w3.org/TR/2017/REC-ldn-20170502/</a> (2017).</dd>
   <dt id="ref-35">[35]</dt>
   <dd resource="#capadisli2017linked" typeof="schema:Article">Capadisli, S., Guy, A., Lange, C., Auer, S., Sambra, A., Berners-Lee, T.: Linked data notifications: a resource-centric communication protocol. In: European Semantic Web Conference. pp. 537–553. Springer (2017).</dd>
   <dt id="ref-36">[36]</dt>
-  <dd resource="#WebSub" typeof="schema:CreativeWork">Parecki, A., Genestoux, J.: WebSub. W3C (2018).</dd>
+  <dd resource="https://www.w3.org/TR/2018/REC-websub-20180123/" typeof="schema:CreativeWork">Parecki, A., Genestoux, J.: WebSub. W3C, <a href="https://www.w3.org/TR/2018/REC-websub-20180123/">https:/​/​www.w3.org/TR/2018/REC-websub-20180123/</a> (2018).</dd>
   <dt id="ref-37">[37]</dt>
   <dd resource="https://dx.doi.org/10.1007/978-3-319-25010-6_24" typeof="schema:Article">Dividino, R., Gottron, T., Scherp, A.: Strategies for Efficiently Keeping Local Linked Open Data Caches Up-To-Date. In: Arenas, M and Corcho, O and Simperl, E and Strohmaier, M and DAquin, M and Srinivas, K and Groth, P and Dumontier, M and Heflin, J and Thirunarayan, K and Staab, S (ed.) SEMANTIC WEB - ISWC 2015, PT II. pp. 356–373. Elsevier; Fujitsu; Google; iMinds; Ontotext; Systap; Yahoo Labs; Franz Inc; IBM Res; Oracle; Metaphacts; Blazegraph (2015).</dd>
   <dt id="ref-38">[38]</dt>
@@ -665,7 +665,7 @@ Finally, <em>WeSP should exploit as much as possible existing protocols and stan
   <dt id="ref-45">[45]</dt>
   <dd resource="https://dx.doi.org/10.1109/ICPADS.2012.106" typeof="schema:Article">Li, Q., He, H., Fang, B.-X., Zhang, H.-L.: A Novel Cache Replacement Policy for ISP Merged CDN. In: Proceedings of the 2012 IEEE 18th International Conference on Parallel and Distributed Systems. pp. 708–709. IEEE Computer Society, USA (2012).</dd>
   <dt id="ref-46">[46]</dt>
-  <dd resource="#webofdatastreams" typeof="schema:Article">Dell’Aglio, D., Phuoc, D., Tuan Anh, L., Ali, M.I., Calbimonte, J.-P.: On a Web of Data Streams. Presented at the October (2017).</dd>
+  <dd resource="https://doi.org/10.5167/uzh-149682" typeof="schema:Article">Dell’Aglio, D., Phuoc, D.L., Le-Tuan, A., Ali, M.I., Calbimonte, J.-P.: On a Web of Data Streams. In: ISWC2017 workshop on Decentralizing the Semantic Web. s.n. (2017).</dd>
   <dt id="ref-47">[47]</dt>
   <dd resource="#mauri2016triplewave" typeof="schema:Article">Mauri, A., Calbimonte, J.-P., Dell’Aglio, D., Balduini, M., Brambilla, M., Della Valle, E., Aberer, K.: Triplewave: Spreading RDF streams on the web. In: International Semantic Web Conference. pp. 140–149. Springer (2016).</dd>
   <dt id="ref-48">[48]</dt>
