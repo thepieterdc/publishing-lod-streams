@@ -1,10 +1,10 @@
 [
-    {
-      "@id": "http://example.org/alice",
-      "http://schema.org/knows": [
-        {
-          "@id": "http://example.org/bob"
-        }
-      ]
-    }
-  ]
+  {
+    "@id": "http://example.org/alice",
+    "http://xmlns.com/foaf/0.1/knows": [
+      {
+        "@id": "http://example.org/bob"
+      }
+    ]
+  }
+]

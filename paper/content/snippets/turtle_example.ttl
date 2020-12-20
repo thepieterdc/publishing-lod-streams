@@ -1,4 +1,3 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-_:alice foaf:knows _:bob .
-_:bob foaf:knows _:alice .
+<http://example.org/alice> foaf:knows <http://example.org/bob> .
