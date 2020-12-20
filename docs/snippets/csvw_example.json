@@ -1,0 +1,9 @@
+{
+    "titles": "country",
+    "datatype": {
+      "dc:title": "Country Code",
+      "dc:description": "Country codes as specified in ISO 3166.",
+      "base": "string",
+      "format": "[a-z]{2}"
+    }
+  }
