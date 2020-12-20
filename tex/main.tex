@@ -1,0 +1,85 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage[final]{hyperref}
+\usepackage{listings}
+\usepackage{palatino}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{cleveref}
+
+% Colours.
+\definecolor{code-background}{HTML}{EEEEEE}
+\definecolor{ugent-blue}{RGB}{30, 100, 200}
+
+% Meta-information.
+\hypersetup{
+	pdfauthor = {Andreas De Witte, Pieter De Clercq, Robin Devos, Sieben Veldeman, Harm Delva, Dwight Van Lancker, Pieter Colpaert},
+	pdftitle = {Publishing Linked Data Event Streams},
+	pdfsubject = {Survey paper for the Research Project course at Ghent University, december 2020.},
+	linkcolor = black,
+	citecolor = ugent-blue,
+	urlcolor = ugent-blue,
+	colorlinks = true,
+}
+
+% Code listings.
+\lstset{
+	numbers=left,
+	numberstyle=\scriptsize,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=lines,
+	captionpos=b,
+	backgroundcolor=\color{code-background},
+	autogobble=true,
+    escapeinside={(*}{*)},
+    upquote=true
+}
+
+% References.
+\renewcommand{\lstlistingname}{Example}
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+\crefname{listing}{example}{examples}  
+\Crefname{listing}{Example}{Examples}
+
+% Citations.
+\addbibresource{references.bib}
+
+% Document setup.
+\title{Publishing Linked Data Event Streams}
+\author{Andreas De Witte$^1$ \and Pieter De Clercq$^1$ \and Robin Devos$^1$ \and Sieben Veldeman$^1$ \and Harm Delva$^2$ \and Dwight Van Lancker$^2$ \and Pieter Colpaert$^2$}
+\date{
+    $^1$Faculty of Engineering and Architecture, Ghent University\\%
+    $^2$IDLab, Department of Electronics and Information Systems, Ghent University – imec\\[2ex]%
+    December 20, 2020
+}
+
+\begin{document}
+
+\maketitle
+
+% Abstract.
+\input{abstract}
+
+% Corpus.
+\pagenumbering{arabic}
+\input{introduction.tex}
+\input{semanticweb.tex}
+\input{formatting}
+\input{linked_data.tex}
+\input{versioning.tex}
+\input{delivery.tex}
+\input{caching.tex}
+\input{streaming.tex}
+\input{conclusion.tex}
+
+% References.
+\printbibliography[]
+
+\end{document}
