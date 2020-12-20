@@ -23,7 +23,7 @@ Example of a linked data web.
 ### SPARQL
 {:#sparql}
 
-SPARQL [](cite:cites world2013sparql) (a recursive acronym that stands for the SPARQL Protocol and RDF Query Language) is a semantic query language that allows to query and edit data stored in the RDF format. It is the standard query language for RDF and was adapted by W3C[^w3c] as a recommendation in 2008. SPARQL is similar to SQL[^sql], but where SQL operates on relational databases, SPARQL operates on the Semantic Web. While the functionality is not completely the same, the style of querying for information is very similar, as shown in [](#sparql-example).
+SPARQL [](cite:cites world2013sparql) (a recursive acronym that stands for the SPARQL Protocol and RDF Query Language) is a semantic query language that allows to query and edit data stored in the RDF format. It is the standard query language for RDF and was adopted by W3C[^w3c] as a recommendation in 2008. SPARQL is similar to SQL[^sql], but where SQL operates on relational databases, SPARQL operates on the Semantic Web. While the functionality is not completely the same, the style of querying for information is very similar, as shown in [](#sparql-example).
 
 <figure id="sparql-example" class="listing">
 ````/snippets/sparql-example.txt````
