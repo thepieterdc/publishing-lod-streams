@@ -22,7 +22,7 @@ RDF is structured as a collection of triples. These triples can be visualized as
 An RDF triple represents a simple sentence. A commonly used example is the triple (``Alice - Knows - Bob``), which means that the subject ''Alice'', knows the object of the triple ''Bob''.
 
 ### Serialization format 
-When reasoning about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of `subject - predicate - object`. Hence, to publish an RDF graph, it must be serialized using an RDF syntax [](cite:cites heath2011linked). Some of the standardized syntaxes are described below, each with the corresponding notation of the ``Alice - Knows - Bob` example.
+When reasoning about RDF, it is important to note that RDF itself is not a data format, but a data model. This model describes that the data should be represented as a triple, in the form of ``subject - predicate - object``. Hence, to publish an RDF graph, it must be serialized using an RDF syntax [](cite:cites heath2011linked). Some of the standardized syntaxes are described below, each with the corresponding notation of the ``Alice - Knows - Bob`` example.
 
 #### RDF/XML
 
@@ -123,6 +123,7 @@ HDT is a binary format to represent RDF data in a compact way. An HDT file combi
 RDF* (pronounced as ''RDF star'') is an extension to the Resource Description Framework, which enables RDF graphs to represent interactions and attributes by embedding triples. By nesting triples, an entire triple can become the subject of a second triple. This eliminates the need for intermediary entities, making the model easier to understand. Even though RDF* offers many benefits, it is still under consideration by the W3C and is not yet officially accepted as a standard.
 
 ### Decoupling data
+{:#formatting-decoupling}
 Since RDF is used to decouple data from its scheme, it should be possible to receive an arbitrary dataset (structured as e.g. CSV, XML, JSON or in a database), and transform this into an RDF format. To facilitate this, the RDF Mapping Language (RML) is used to materialize data into RDF triples.
 
 RML is defined to express customized mapping rules from heterogeneous data structures and serializations to the RDF data model. Furthermore, RML is a superset of the W3C-standardized mapping language (R2RML). RML provides a generic way of defining the mappings that is easily transferable to cover references to other data structures. Thus, RML is a generic approach, but offers case-specific extensions. This makes it possible to transform any input (e.g., CSV, JSON, relational databases, etc.) into RDF data [](cite:cites dimou2014rml).
