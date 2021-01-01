@@ -425,7 +425,7 @@ The final strategy augments the stored triples with temporal validity informatio
       <p>A <em>sender</em> can send a notification to a <em>receiver</em> using an HTTP <code>POST</code>-request. The receiver is then responsible for storing these in their inbox. When a consumer wants to fetch these notifications, they can send an HTTP <code>GET</code>-request to the URL of this inbox. The response to this request contains a listing of all the corresponding notifications. Each entry in the list must be formatted as an RDF source and contains a URI, which the consumer can subsequently use to query specific notifications from the inbox. According to the specification, each notification needs to at least be formatted with the JSON-LD <a href="#formatting-json-ld">Subsubsection 3.3.4</a> <code>Content-Type</code>, but additional serializations are allowed as well. This clearly shows the similarities with a system that uses brokers. However, LDN seems less focused on continuously updating data and speed and more on adaptability and the ability to use it in a variety of contexts <span class="references">[<a href="#ref-35">35</a>]</span>. Evaluating the performance of LDN, when speed is crucial, can be a topic for further research.</p>
 
       <figure id="LDN">
-<img src="images/LDN.svg" alt="[LDN model]" />
+<img src="images/ldn.svg" alt="[LDN model]" />
 <figcaption>
           <p><span class="label">Fig. 4:</span> Linked Data Notifications delivery model <span class="references">[<a href="#ref-35">35</a>]</span>. Note the different HTTP requests indicated using the arrows, as discussed in the text. Also note the discovery of the inbox and notifications using RDF predicates.</p>
         </figcaption>
