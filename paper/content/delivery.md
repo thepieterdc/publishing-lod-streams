@@ -31,7 +31,7 @@ Other options include the use of *web feeds*, such as RDF Site Summary (RSS). RS
 A *sender* can send a notification to a *receiver* using an HTTP ``POST``-request. The receiver is then responsible for storing these in their inbox. When a consumer wants to fetch these notifications, they can send an HTTP ``GET``-request to the URL of this inbox. The response to this request contains a listing of all the corresponding notifications. Each entry in the list must be formatted as an RDF source and contains a URI, which the consumer can subsequently use to query specific notifications from the inbox. According to the specification, each notification needs to at least be formatted with the JSON-LD [](#formatting-json-ld) `Content-Type`, but additional serializations are allowed as well. This clearly shows the similarities with a system that uses brokers. However, LDN seems less focused on continuously updating data and speed and more on adaptability and the ability to use it in a variety of contexts [](cite:cites capadisli2017linked). Evaluating the performance of LDN, when speed is crucial, can be a topic for further research.
 
 <figure id="LDN">
-<img src="images/LDN.svg" alt="[LDN model]">
+<img src="images/ldn.svg" alt="[LDN model]">
 <figcaption markdown="block">
 Linked Data Notifications delivery model [](cite:cites capadisli2017linked). Note the different HTTP requests indicated using the arrows, as discussed in the text. Also note the discovery of the inbox and notifications using RDF predicates.
 </figcaption>
